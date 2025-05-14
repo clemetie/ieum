@@ -1,0 +1,74 @@
+$ieum-main: #4a90f4;
+$ieum-point: #fee274;
+$ieum-red: #ee0016;
+$ieum-gumi-green: #5b8a2e;
+$ieum-gumi-main: #fc6713;
+$ieum-bing-main: #1456fd;
+
+@mixin text-style($size, $weight) {
+  font-family: "Paperlogy";
+  font-size: $size;
+  font-weight: $weight;
+  line-height: 1.2;
+  white-space: pre-line;
+}
+
+.main-h1 {
+  @include text-style(50px, 700);
+}
+.main-h2 {
+  @include text-style(38px, 600);
+}
+.main-h3 {
+  @include text-style(30px, 500);
+}
+.main-h4 {
+  @include text-style(24px, 500);
+}
+.main-h5 {
+  @include text-style(22px, 400);
+}
+.main-h6 {
+  @include text-style(20px, 400);
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main-h1 {
+    @include text-style(33px, 600);
+  }
+  .main-h2 {
+    @include text-style(30px, 500);
+  }
+  .main-h3 {
+    @include text-style(30px, 500);
+  }
+  .main-h4 {
+    @include text-style(24px, 300);
+  }
+  .main-h5 {
+    @include text-style(20px, 300);
+  }
+  .main-h6 {
+    @include text-style(16px, 300);
+  }
+}
+@media (max-width: 767px) {
+  .main-h1 {
+    @include text-style(30px, 600);
+  }
+  .main-h2 {
+    @include text-style(24px, 500);
+  }
+  .main-h3 {
+    @include text-style(20px, 500);
+  }
+  .main-h4 {
+    @include text-style(16px, 300);
+  }
+  .main-h5 {
+    @include text-style(16px, 300);
+  }
+  .main-h6 {
+    @include text-style(15px, 700);
+  }
+}

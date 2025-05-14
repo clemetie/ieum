@@ -1,0 +1,93 @@
+@import "../styles/variables";
+// 비주얼 섹션
+.visual-wrap.headline {
+  @keyframes draw-left {
+    from {
+      stroke-dashoffset: 800;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes draw-right {
+    from {
+      stroke-dashoffset: -800;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 800px;
+  .title {
+    &.left {
+      color: $ieum-main;
+      position: absolute;
+      left: 2%;
+      top: 35%;
+    }
+    &.right {
+      color: $ieum-point;
+      position: absolute;
+      right: 2%;
+      top: 60%;
+    }
+  }
+  .wave-line {
+    width: 100%;
+    height: 100px;
+    margin: auto 0;
+    path {
+      stroke-width: 20;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: draw 1.5s ease-out forwards;
+    }
+
+    .blue-path {
+      stroke: $ieum-main;
+      animation-name: draw-left;
+    }
+    .yellow-path {
+      stroke: $ieum-point;
+      animation-name: draw-right;
+      animation-delay: 0.2s;
+    }
+  }
+}
+// 자기소개 섹션
+.Info-wrap {
+  list-style: none;
+  background-color: pink;
+  height: 800px;
+  display: flex;
+}
+// 사이드 네비게이션
+.leftnav-wrap {
+  list-style: none;
+  background-color: yellow;
+  height: 100vh;
+}
+//프로젝트 섹션
+.project-wrap {
+  color: red;
+  background: #f4f4f4;
+  height: 100vh;
+}
+// 자격 섹션
+.Certificate-wrap {
+  list-style: none;
+  background-color: green;
+  height: 100vh;
+}
+// 스킬 섹션
+.skill-wrap {
+  list-style: none;
+  background-color: purple;
+}
