@@ -80,3 +80,43 @@
   // background-color: #f9ee54;
   margin: 0 auto;
 }
+
+button {
+  border: none;
+  background: none;
+  text-decoration: underline;
+}
+
+.swiper {
+  overflow: visible !important;
+}
+
+.quick-menu {
+  position: fixed;
+  right: 2%;
+  bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+
+  .mail,
+  .scrollTop {
+    color: white;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+#root > div {
+  display: flex;
+  flex-direction: column;
+}

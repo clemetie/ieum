@@ -1,39 +1,77 @@
+import { width } from "@fortawesome/free-solid-svg-icons/fa0";
+
 const Info = () => {
   return (
     <section className="Info-wrap">
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/HFCKQnIDRSA?si=d7eNpjR_TGM9h4B0&amp;start=120"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-      ></iframe>
-      <div className="profile">
-        <p className="hello">
-          안녕하세요,
-          <br />
-          가능성을 이어주는 PM 김효빈입니다
-        </p>
-        <ul className="Info-bullets">
-          <li>팀원 각자의 강점을 조율하며 더 나은 결과를 만듭니다.</li>
-          <li>사용자의 Pain Point를 빠르게 읽고 연결합니다.</li>
-          <li>시작만 해도 반드시 피니시를 책임집니다.</li>
-          <li>흐름 속에서도, 집중을 잃고 다시 연결합니다.</li>
-        </ul>
+      <div className="video">
+        <iframe
+          src="https://www.youtube.com/embed/HFCKQnIDRSA?si=d7eNpjR_TGM9h4B0&amp;start=120"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+        <div className="Info-buttons">
+          <a
+            href="https://www.notion.so/18a5da4a6d758023a05dcb9ea6920cf8?pvs=4"
+            target="_blank"
+            className="main-h4"
+          >
+            <svg
+              width="50"
+              height="50"
+              viewBox="0 0 50 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10.8594 10.3895C12.259 11.5265 12.7841 11.4398 15.4123 11.2644L40.1903 9.77663C40.7157 9.77663 40.2787 9.25237 40.1037 9.16523L35.9883 6.19037C35.2 5.57823 34.1493 4.87717 32.1361 5.05253L8.14359 6.80247C7.26863 6.88923 7.09383 7.3267 7.44233 7.6774L10.8594 10.3895ZM12.347 16.1639V42.2347C12.347 43.6357 13.0472 44.16 14.6231 44.0733L41.854 42.4977C43.4307 42.411 43.6063 41.447 43.6063 40.309V14.4132C43.6063 13.2769 43.1693 12.664 42.204 12.7515L13.7474 14.4132C12.6973 14.5015 12.347 15.0268 12.347 16.1639ZM39.2293 17.5624C39.404 18.3506 39.2293 19.1381 38.4397 19.2266L37.1277 19.488V38.735C35.9883 39.3473 34.938 39.6973 34.0627 39.6973C32.6612 39.6973 32.3102 39.2597 31.2604 37.948L22.6782 24.475V37.5107L25.3939 38.1233C25.3939 38.1233 25.3939 39.6973 23.2029 39.6973L17.1626 40.0477C16.9872 39.6973 17.1626 38.8233 17.7753 38.648L19.3515 38.2113V20.9759L17.163 20.8005C16.9875 20.0123 17.4246 18.8759 18.6513 18.7877L25.1312 18.3509L34.0627 31.9993V19.9255L31.7855 19.6641C31.6107 18.7006 32.3102 18.0009 33.1859 17.9142L39.2293 17.5624ZM6.12913 4.4404L31.0852 2.60262C34.15 2.33977 34.9383 2.51584 36.8647 3.91507L44.8307 9.51413C46.1453 10.477 46.5833 10.7391 46.5833 11.7887V42.4977C46.5833 44.422 45.8823 45.5603 43.431 45.7343L14.4497 47.4847C12.6097 47.5723 11.734 47.31 10.7704 46.0843L4.90386 38.473C3.85266 37.072 3.41553 36.0237 3.41553 34.7973V7.50137C3.41553 5.9275 4.11679 4.6147 6.12913 4.4404Z"
+                fill="currentColor"
+              />
+            </svg>
+            Notion
+          </a>
+          <a
+            href="https://github.com/clemetie"
+            target="_blank"
+            className="main-h4"
+          >
+            <svg
+              width="50"
+              height="50"
+              viewBox="0 0 50 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M25 0C38.8075 0 50 11.4748 50 25.6323C50 36.9548 42.845 46.5599 32.9175 49.9524C31.65 50.2049 31.2 49.4044 31.2 48.7219C31.2 47.8769 31.23 45.117 31.23 41.687C31.23 39.297 30.43 37.7371 29.5325 36.9421C35.1 36.3071 40.95 34.1394 40.95 24.2944C40.95 21.4944 39.98 19.2096 38.375 17.4146C38.635 16.7671 39.4925 14.1599 38.13 10.6299C38.13 10.6299 36.035 9.94306 31.2625 13.2581C29.265 12.6906 27.125 12.405 25 12.395C22.875 12.405 20.7375 12.6906 18.7425 13.2581C13.965 9.94306 11.865 10.6299 11.865 10.6299C10.5075 14.1599 11.365 16.7671 11.6225 17.4146C10.025 19.2096 9.04751 21.4944 9.04751 24.2944C9.04751 34.1144 14.885 36.3154 20.4375 36.9629C19.7225 37.6029 19.075 38.7319 18.85 40.3894C17.425 41.0444 13.805 42.178 11.575 38.2605C11.575 38.2605 10.2525 35.7977 7.7425 35.6177C7.7425 35.6177 5.305 35.5853 7.5725 37.1753C7.5725 37.1753 9.21 37.9628 10.3475 40.9253C10.3475 40.9253 11.815 45.5002 18.77 43.9502C18.7825 46.0927 18.805 48.1119 18.805 48.7219C18.805 49.3994 18.345 50.1923 17.0975 49.9548C7.16249 46.5673 0 36.9573 0 25.6323C0 11.4748 11.195 0 25 0Z"
+                fill="currentColor"
+              />
+            </svg>
+            Github
+          </a>
+        </div>
       </div>
-      <div className="Info-buttons">
-        <a
-          href="https://www.notion.so/18a5da4a6d758023a05dcb9ea6920cf8?pvs=4"
-          target="_blank"
-        >
-          Notion
-        </a>
-        <a href="https://github.com/clemetie" target="_blank">
-          Github
-        </a>
+      <div className="profile">
+        <p className="hello main-h2">가능성을 이어주는 기획자 김효빈입니다</p>
+        <ul className="Info-bullets main-h4">
+          <li>
+            - 팀원 <b>각자의 강점을 조율</b>해 더 나은 결과를 만듭니다.
+          </li>
+          <li>
+            - 사용자와 팀의 <b>간극을 빠르게 읽고 연결</b>합니다.
+          </li>
+          <li>
+            - 시작한 일은 반드시 <b>끝까지 책임</b>집니다.
+          </li>
+          <li>
+            - 흐트러진 흐름 속에서도, <b>중심을 잡고 다시 연결</b>합니다.
+          </li>
+        </ul>
+        <button className="main-h4">→ 함께한 사람들 리뷰보기</button>
       </div>
     </section>
   );

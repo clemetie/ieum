@@ -25,7 +25,7 @@ const Visual = () => {
           strokeLinecap="round"
         />
       </svg>
-      <span className="title right main-h1">가능성을 이어주는 PM</span>
+      <span className="title right main-h1">가능성을 이어주는 기획자</span>
     </section>
   );
 };

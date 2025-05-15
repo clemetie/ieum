@@ -1,23 +1,23 @@
 @import "../styles/variables";
 // 비주얼 섹션
-.visual-wrap.headline {
-  @keyframes draw-left {
-    from {
-      stroke-dashoffset: 800;
-    }
-    to {
-      stroke-dashoffset: 0;
-    }
+@keyframes draw-left {
+  from {
+    stroke-dashoffset: 800;
   }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 
-  @keyframes draw-right {
-    from {
-      stroke-dashoffset: -800;
-    }
-    to {
-      stroke-dashoffset: 0;
-    }
+@keyframes draw-right {
+  from {
+    stroke-dashoffset: -800;
   }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.visual-wrap.headline {
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -64,30 +64,60 @@
 // 자기소개 섹션
 .Info-wrap {
   list-style: none;
-  background-color: pink;
   height: 800px;
   display: flex;
+  margin: auto;
+  justify-content: center;
+  padding: 5% 0;
+  gap: 5%;
+  .video {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    align-items: center;
+    iframe {
+      width: 650px;
+      height: 350px;
+      border-radius: 20px;
+    }
+    .Info-buttons {
+      display: flex;
+      gap: 5%;
+      a {
+        width: 250px;
+        height: 70px;
+        display: inline-flex;
+        gap: 5%;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid #666;
+        border-radius: 20px;
+        text-decoration: none;
+        color: #666;
+        svg {
+          color: #666;
+        }
+        &:hover {
+          color: black;
+          border: 3px solid black;
+          svg {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+  .profile {
+    margin-top: 1%;
+    .Info-bullets {
+      margin-top: 50px;
+      margin-bottom: 50px;
+      font-weight: 300;
+      line-height: 1.5;
+      b {
+        color: $ieum-main;
+      }
+    }
+  }
 }
-// 사이드 네비게이션
-.leftnav-wrap {
-  list-style: none;
-  background-color: yellow;
-  height: 100vh;
-}
-//프로젝트 섹션
-.project-wrap {
-  color: red;
-  background: #f4f4f4;
-  height: 100vh;
-}
-// 자격 섹션
-.Certificate-wrap {
-  list-style: none;
-  background-color: green;
-  height: 100vh;
-}
-// 스킬 섹션
-.skill-wrap {
-  list-style: none;
-  background-color: purple;
-}
+

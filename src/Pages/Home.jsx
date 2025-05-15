@@ -1,11 +1,9 @@
 import Header from "../components/Header";
 import Visual from "../components/Visual";
 import Info from "../components/Info";
-import Leftnav from "../components/Leftnav";
-import Project from "../components/Project";
-import Certificate from "../components/Certificate";
-import Skill from "../components/Skill";
+import Main from "../components/Main";
 import Footer from "../components/Footer";
+import Quick from "../components/Quick";
 
 const Home = () => {
   return (
@@ -14,20 +12,10 @@ const Home = () => {
       <Visual />
       <Info />
       <main>
-        <Leftnav />
-        <section id="project">
-          <Project />
-        </section>
-
-        <section id="certificate">
-          <Certificate />
-        </section>
-
-        <section id="skills">
-          <Skill />
-        </section>
+        <Main />
       </main>
       <Footer />
+      <Quick />
     </div>
   );
 };

@@ -4,6 +4,7 @@ $ieum-red: #ee0016;
 $ieum-gumi-green: #5b8a2e;
 $ieum-gumi-main: #fc6713;
 $ieum-bing-main: #1456fd;
+$shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
 @mixin text-style($size, $weight) {
   font-family: "Paperlogy";
