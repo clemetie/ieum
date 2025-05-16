@@ -1,4 +1,121 @@
 @import "../styles/variables";
-section {
-  background-color: lightblue;
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($color: #000, $alpha: 0.25);
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  button {
+    margin-top: 5%;
+    margin-left: 2%;
+  }
+  .modal-content {
+    max-width: 1440px;
+    max-height: 80vh; // 중요!
+    overflow-y: auto; // 이거 있어야 스크롤 돼!
+    background-color: #fff;
+    border-radius: 12px;
+    margin-top: 5%;
+    &::-webkit-scrollbar {
+      width: 10px; // 세로 스크롤바만 적용
+      height: 0; // 가로 스크롤바 제거 (추가 보완)
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $ieum-point;
+      border-radius: 10px;
+      border: 2px solid transparent;
+      background-clip: content-box;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: lighten($ieum-point, 10%);
+    }
+
+    &::-webkit-scrollbar-button {
+      display: none; // 화살표 버튼 제거
+    }
+    img {
+      width: 100%;
+    }
+    .top {
+      display: flex;
+      flex: 1;
+      padding: 4%;
+      gap: 5%;
+      img {
+        max-width: 680px;
+        max-height: 380px;
+        border-radius: 20px;
+      }
+      .description-box {
+        display: flex;
+        flex-direction: column;
+        gap: 7%;
+        li {
+          line-height: 1.5;
+          color: $gray7;
+        }
+        .description {
+          color: $ieum-bing-main;
+        }
+        a {
+          text-align: right;
+        }
+        .main-h6{
+          color: $gray6;
+        }
+      }
+    }
+    .content {
+      padding: 3% 0;
+      text-align: center;
+      .highlight {
+        background: linear-gradient(to top, #fee274 50%, transparent 50%);
+      }
+      .main-h4 {
+        font-weight: 300;
+        line-height: 1.5;
+        margin-bottom: 4%;
+        b {
+          font-weight: 600;
+        }
+      }
+      .main-h3 {
+        margin: 5% 0;
+      }
+      .solution-list {
+        display: flex;
+        justify-content: center;
+        gap: 2%;
+        margin: auto;
+        .solution-card {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          width: 20%;
+          height: 9rem;
+          background-color: #fff;
+          box-shadow: $shadow;
+          border-radius: 20px;
+          margin: 5% 0 10%;
+          .main-h4 {
+            color: #ff0000;
+            font-weight: 500;
+          }
+          .main-h6 {
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
 }

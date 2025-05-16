@@ -1,4 +1,5 @@
 @import "../styles/variables";
+
 @keyframes starmove {
   0% {
     transform: rotate(0deg);
@@ -7,6 +8,7 @@
     transform: rotate(360deg);
   }
 }
+
 header {
   display: flex;
   align-items: center;
@@ -15,11 +17,13 @@ header {
   text-align: center;
   height: 100px;
   padding: 0 3%;
+
   img {
     max-width: 100px;
     max-height: 50px;
   }
-  ul {
+
+  .menu-list {
     width: 90%;
     display: flex;
     height: 100%;
@@ -27,11 +31,28 @@ header {
     gap: 10%;
     align-items: center;
     padding-right: 5%;
+
+    li {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: all 0.4s ease;
+      cursor: pointer;
+    }
+
+    &.show {
+      li {
+        opacity: 1;
+        transform: translateX(0);
+        cursor: pointer;
+      }
+    }
   }
+
   .menu-icon {
     width: 80px;
     height: 80px;
     position: relative;
+    cursor: pointer;
     svg {
       position: absolute;
       top: 50%;
@@ -42,6 +63,7 @@ header {
       z-index: 1;
       color: #fff;
     }
+
     &::after {
       position: absolute;
       top: 20%;

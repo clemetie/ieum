@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -7,6 +7,7 @@ import "../styles/Main.scss";
 
 const projects = [
   {
+    id: "bingfree1",
     name: "제빙기 청소 예약 사이트",
     period: "2025.03 ~ 2025.04",
     team: "4인 프로젝트",
@@ -87,6 +88,7 @@ const projects = [
     ],
   },
   {
+    id: "gumi",
     name: "축제 홍보 사이트",
     period: "2025.02 ~ 2025.02",
     team: "4인 프로젝트",
@@ -157,6 +159,7 @@ const projects = [
     ],
   },
   {
+    id: "ieum",
     name: "포트폴리오 사이트",
     period: "2025.05 ~ 진행중",
     team: "1인 프로젝트",
@@ -217,6 +220,7 @@ const projects = [
     ],
   },
   {
+    id: "knitting",
     name: "뜨개 제품 판매 사이트",
     period: "2025.01 ~ 2025.02",
     team: "1인 프로젝트",
@@ -269,7 +273,7 @@ const projects = [
   },
 ];
 
-export default function ProjectSwiper() {
+const ProjectSwiper = ({ openModal }) => {
   return (
     <Swiper spaceBetween={40} slidesPerView={3.5}>
       {projects.map((item, index) => (
@@ -281,7 +285,13 @@ export default function ProjectSwiper() {
               <p>
                 {item.period} | {item.team}
               </p>
-              <button className="main-h6 detail-link">→ 자세히 보기</button>
+
+              <button
+                className="main-h6 detail-link"
+                onClick={() => openModal(item.id)}
+              >
+                → 자세히 보기
+              </button>
             </div>
             <div className="stack-icons">{item.stacks}</div>
           </div>
@@ -289,4 +299,6 @@ export default function ProjectSwiper() {
       ))}
     </Swiper>
   );
-}
+};
+
+export default ProjectSwiper;

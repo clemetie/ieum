@@ -85,6 +85,7 @@ button {
   border: none;
   background: none;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .swiper {
@@ -94,7 +95,7 @@ button {
 .quick-menu {
   position: fixed;
   right: 2%;
-  bottom: 10%;
+  bottom: 5%;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -114,9 +115,37 @@ html,
 body {
   height: 100%;
   margin: 0;
+  &::-webkit-scrollbar {
+    width: 15px; // 세로 스크롤바만 적용
+    height: 0; // 가로 스크롤바 제거 (추가 보완)
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $ieum-point;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: lighten($ieum-point, 10%);
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none; // 화살표 버튼 제거
+  }
 }
 
 #root > div {
   display: flex;
   flex-direction: column;
+}
+
+hr {
+  border: none;
+  border-top: 2px dashed $ieum-main;
+  margin: 20px 0; /* 상하 여백 (선택사항) */
 }

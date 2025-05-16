@@ -4,14 +4,28 @@ footer {
   height: 100vh;
   display: flex;
   flex: 1;
+  justify-content: center;
   margin: auto;
-  padding: 5%;
-  gap: 15%;
+  padding: 10% 5%;
+  gap: 5%;
+  position: relative;
+  h1.main-h1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 180px;
+    color: $ieum-main;
+    filter: blur(1);
+    opacity: 0.1;
+    z-index: -999;
+  }
   .main-h2 {
     font-weight: 400;
     color: $ieum-main;
   }
   .profile {
+    width: calc(80% / 2);
+    padding-left: 5%;
     .profile-list {
       display: flex;
       margin-top: 10%;
@@ -25,8 +39,9 @@ footer {
           }
         }
         &.title {
-          width: 30%;
+          width: 20%;
           color: $ieum-main;
+          margin-right: 5%;
           li {
             border-right: 2px solid $ieum-main;
           }
@@ -35,13 +50,18 @@ footer {
     }
   }
   .faq {
+    width: calc(90% / 2);
+    margin-bottom: 3%;
+
     .faqlist {
-      width: 700px;
+      z-index: 999;
+      width: 100%;
       line-height: 80px;
       box-shadow: $shadow;
       border-radius: 20px;
       padding: 0 3%;
       margin: 30px 0;
+      background-color: #fff;
     }
   }
 }

@@ -1,4 +1,3 @@
-import { width } from "@fortawesome/free-solid-svg-icons/fa0";
 
 const Info = () => {
   return (

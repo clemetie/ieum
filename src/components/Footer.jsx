@@ -18,10 +18,10 @@ const Footer = () => {
         <div className="profile-list">
           <ul className="title main-h6">
             <li>Email</li>
-            <li>Mobil</li>
+            <li>Mobile</li>
             <li>Site</li>
           </ul>
-          <ul className="description main-h6">
+          <ul className=" main-h6">
             <li>hyobin1221@naver.com</li>
             <li>010-3508-3619</li>
             <li>
@@ -47,6 +47,7 @@ const Footer = () => {
           <div className="faqlist main-h5">{item.Question}</div>
         ))}
       </div>
+      <h1 className="main-h1">KIMHYOBEEN</h1>
     </footer>
   );
 };
