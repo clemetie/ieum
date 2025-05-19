@@ -39,7 +39,7 @@ const Modal = ({ open, onClose, sectionId }) => {
 
   // 3. 모달 UI 반환
   return (
-    <div className="modal" onClick={onClose}>
+    <div className="modal">
       <div className="modal-content">
         {sectionId === "bingfree1" && (
           <section id="bingfree">
@@ -76,16 +76,19 @@ const Modal = ({ open, onClose, sectionId }) => {
             </div>
             <hr />
             <div className="content">
-              <p className="main-h4">
-                제빙기는 위생 관리가 필수지만, 사용자의 위생 인식 부족과 예약
-                불편으로 청소 수요가 낮습니다.
+              <p className="main-h5">
+                제빙기는 위생 관리가 필수지만,
                 <br />
-                <b>다양한 연령대의 고객군을 고려한</b> 직관적인 예약 시스템과{" "}
-                <b>장기 이용을 유도할 전략</b>이 필요합니다.
+                사용자의 위생 인식 부족과 예약 불편으로 청소 수요가 낮습니다.
+                <br />
+                <b>다양한 연령대의 고객군을 고려한</b>
+                <br />
+                직관적인 예약 시스템과 <b>장기 이용을 유도할 전략</b>이
+                필요합니다.
               </p>
 
               <img src="/images/bingfree (1).png" alt="상세이미지 1" />
-              <p className="main-h3">
+              <p className="main-h4">
                 <b>
                   <span class="highlight">사용자의 불편에서 출발한 기획</span>,
                 </b>
@@ -95,7 +98,7 @@ const Modal = ({ open, onClose, sectionId }) => {
               <div className="solution-list">
                 {points.map((point, idx) => (
                   <div key={idx} className="solution-card">
-                    <p className="main-h4">{point.title}</p>
+                    <p className="main-h5">{point.title}</p>
                     <p className="main-h6">
                       {point.description.split("\n").map((line, i) => (
                         <span key={i}>
@@ -108,7 +111,7 @@ const Modal = ({ open, onClose, sectionId }) => {
                 ))}
               </div>
               <img src="/images/bingfree (3).png" alt="상세이미지2" />
-              <p className="main-h4">
+              <p className="main-h5">
                 본 화면은 기획, 디자인, 프론트엔드 구현까지 직접 담당한
                 결과물입니다.
                 <br />
@@ -121,6 +124,62 @@ const Modal = ({ open, onClose, sectionId }) => {
                 <br />
                 기획 관점에서의 End-to-End 경험을 담았습니다.
               </p>
+              <div className="demo">
+                <div className="demo1">
+                  <video
+                    src="/images/bing-main.mkv"
+                    alt="메인 비디오"
+                    autoPlay
+                    muted
+                    loop
+                  />
+                  <p className="description demo-description">
+                    제빙기 위생은 사용자 인식의 사각지대에 놓인 문제입니다.
+                    <br /> 위생 문제를 '눈에 보이지 않는 위험'으로 시각화해
+                    <b> 인식 전환을 유도</b> 하고,
+                    <br />
+                    구독 서비스를 통해
+                    <b>가시적인 신뢰 요소(라벨)로 연결</b> 되는 흐름을
+                    설계했습니다.
+                  </p>
+                </div>
+                <div className="demo2">
+                  <video
+                    src="/images/bing-reserv.mkv"
+                    alt="메인 비디오"
+                    autoPlay
+                    muted
+                    loop
+                  />
+                  <p className="description demo-description">
+                    고객은 예약 전 궁금한 점이 생기면 상담이 필요하다고 느끼기
+                    쉽습니다.
+                    <br />
+                    이를 줄이기 위해 자주 묻는 질문을 말풍선 형태로 배치해
+                    심리적 장벽을 낮췄고,
+                    <br />
+                    바로 예약으로 이어지는 흐름으로
+                    <b> 전환율 개선을 고려한 구조를 설계</b> 했습니다.
+                  </p>
+                </div>
+                <div className="demo3">
+                  <img src="/images/bing-demo3.png" alt="시연사진" />
+                  <p className="description demo-description">
+                    다양한 사용자 환경을 고려해 입력 UI의 직관성을 높이고,
+                    <br /> <b>가격 예측 및 구독 전환 유도를 함께 고려</b>한 예약
+                    페이지를 설계했습니다.
+                  </p>
+                </div>
+                <div className="demo4">
+                  <img src="/images/bing-demo4.png" alt="시연사진" />
+                  <p className="description demo-description">
+                    최소한의 정보로도 예약 내역을 조회할 수 있도록 설계하고,
+                    <br />
+                    반복 예약 시 기존 정보를 불러와
+                    <b> 편의성과 전환율을 높였습니다.</b>
+                  </p>
+                </div>
+              </div>
             </div>
           </section>
         )}

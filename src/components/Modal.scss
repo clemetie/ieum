@@ -1,4 +1,6 @@
 @import "../styles/variables";
+@import "../styles/media";
+
 .modal {
   position: fixed;
   top: 0;
@@ -6,10 +8,11 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba($color: #000, $alpha: 0.25);
-  z-index: 999999;
+  z-index: 9;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+
   button {
     margin-top: 5%;
     margin-left: 2%;
@@ -21,6 +24,7 @@
     background-color: #fff;
     border-radius: 12px;
     margin-top: 5%;
+    z-index: 99999;
     &::-webkit-scrollbar {
       width: 10px; // 세로 스크롤바만 적용
       height: 0; // 가로 스크롤바 제거 (추가 보완)
@@ -48,9 +52,13 @@
     }
     .top {
       display: flex;
-      flex: 1;
       padding: 4%;
       gap: 5%;
+      @include tablet {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
       img {
         max-width: 680px;
         max-height: 380px;
@@ -60,6 +68,9 @@
         display: flex;
         flex-direction: column;
         gap: 7%;
+        @include tablet {
+          margin-top: 5%;
+        }
         li {
           line-height: 1.5;
           color: $gray7;
@@ -70,7 +81,7 @@
         a {
           text-align: right;
         }
-        .main-h6{
+        .main-h6 {
           color: $gray6;
         }
       }
@@ -81,10 +92,10 @@
       .highlight {
         background: linear-gradient(to top, #fee274 50%, transparent 50%);
       }
-      .main-h4 {
+      .main-h5 {
         font-weight: 300;
         line-height: 1.5;
-        margin-bottom: 4%;
+        margin: 3% 0;
         b {
           font-weight: 600;
         }
@@ -93,26 +104,63 @@
         margin: 5% 0;
       }
       .solution-list {
-        display: flex;
-        justify-content: center;
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
         gap: 2%;
         margin: auto;
+        @include tablet {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        }
         .solution-card {
           display: flex;
           flex-direction: column;
           justify-content: space-evenly;
-          width: 20%;
+          width: 90%;
           height: 9rem;
           background-color: #fff;
           box-shadow: $shadow;
           border-radius: 20px;
           margin: 5% 0 10%;
-          .main-h4 {
+          .main-h5 {
             color: #ff0000;
             font-weight: 500;
           }
           .main-h6 {
             font-weight: 300;
+          }
+        }
+      }
+      .demo {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10%;
+        padding: 5%;
+        margin-bottom: 10%;
+        @include tablet {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+        }
+        video {
+          width: 100%;
+          height: 80%;
+        }
+        img {
+          width: 100%;
+        }
+        .demo1,
+        .demo2,
+        .demo3,
+        .demo4 {
+          display: flex;
+          flex-direction: column;
+          gap: 5%;
+        }
+        .demo-description.description {
+          font-weight: 400;
+          &:last-child {
+            margin-bottom: 10%;
           }
         }
       }

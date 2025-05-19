@@ -1,5 +1,5 @@
 @import "../styles/variables";
-
+@import "../styles/media";
 @keyframes starmove {
   0% {
     transform: rotate(0deg);
@@ -17,7 +17,6 @@ header {
   text-align: center;
   height: 100px;
   padding: 0 3%;
-
   img {
     max-width: 100px;
     max-height: 50px;
@@ -31,7 +30,16 @@ header {
     gap: 10%;
     align-items: center;
     padding-right: 5%;
-
+    @include tablet {
+      gap: 5%;
+      padding-right: 2%;
+    }
+    @include mobile {
+      flex-direction: column;
+      margin-top: 30%;
+      right: 0;
+      align-items: flex-end;
+    }
     li {
       opacity: 0;
       transform: translateX(30px);
@@ -76,6 +84,13 @@ header {
       background-size: contain;
       z-index: 0;
       animation: starmove 5s linear infinite;
+        @include tablet {
+      left: 14%;
+    
+    }
+      @include mobile {
+        left: 0%;
+      }
     }
   }
 }

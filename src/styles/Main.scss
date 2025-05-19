@@ -1,16 +1,35 @@
 @import "../styles/variables";
+@import "../styles/media";
 .main-wrap {
   display: flex;
   height: 700px;
+  @include tablet {
+    flex-direction: column;
+    margin-top: 10%;
+  }
 
+  @include mobile {
+    gap: 10px;
+  }
   .left-nav {
     width: 25%;
     padding: 0 2%;
+    margin: 5% 2%;
     ul {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 20px;
+      @include tablet {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+      }
+
+      @include mobile {
+        gap: 10px;
+      }
     }
     li {
       cursor: pointer;
@@ -26,6 +45,7 @@
     flex: 1;
     overflow-y: auto;
     height: 700px;
+
     &::-webkit-scrollbar {
       width: 10px; // 세로 스크롤바만 적용
       height: 0; // 가로 스크롤바 제거 (추가 보완)
@@ -44,9 +64,20 @@
     &::-webkit-scrollbar-button {
       display: none; // 화살표 버튼 제거
     }
-    section {
+    section.scroll-section {
       min-height: 100vh;
       padding: 2%;
+      scroll-margin-top: 10%;
+      @include tablet {
+        min-height: 80vh;
+      }
+      @include mobile {
+        min-height: 80vh;
+      }
+      .swiper-slide {
+        display: flex;
+        align-items: stretch;
+      }
       .project-card {
         background: #fff;
         border-radius: 20px;
@@ -58,9 +89,17 @@
         flex-wrap: wrap;
         overflow: hidden;
         justify-content: space-between;
+        @include tablet {
+          width: 320px;
+          height: 450px;
+        }
+        @include mobile {
+          gap: 10px;
+        }
         img {
           width: 100%;
           height: 40%;
+          object-fit: cover;
         }
         .project-description {
           display: flex;
@@ -84,11 +123,54 @@
           margin-top: 10px;
         }
       }
+      .skill-list {
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: $shadow;
+        width: 380px;
+        height: 480px;
+        display: flex;
+        flex-direction: column;
+        gap: 3%;
+        flex-wrap: wrap;
+        overflow: hidden;
+        padding: 5%;
+        @include tablet {
+          width: 320px;
+          height: 450px;
+          padding: 5%;
+        }
+        @include mobile {
+          gap: 10px;
+        }
+        ul {
+          margin-top: 5%;
+          display: flex;
+          flex-direction: column;
+          gap: 4%;
+          li {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            span.tool-icon {
+              margin-right: 5%;
+            }
+          }
+        }
+      }
       &#certificate {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
         align-content: start;
+        @include tablet {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        }
+        @include mobile {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        }
         .certificate-card {
           background: #fff;
           border-radius: 20px;
@@ -98,42 +180,17 @@
           display: flex;
           flex-direction: column;
           gap: 5%;
+          @include tablet {
+            height: 15vh;
+          }
+          @include mobile {
+            height: 15vh;
+          }
           .main-h4 {
             font-weight: bold;
           }
           .main-h6 {
             color: #666;
-          }
-        }
-      }
-      &#skills {
-        display: flex;
-        gap: 1.5%;
-        .skill-list {
-          background: #fff;
-          border-radius: 20px;
-          box-shadow: $shadow;
-          width: 380px;
-          height: 480px;
-          display: flex;
-          flex-direction: column;
-          flex-wrap: wrap;
-          overflow: hidden;
-          padding: 2%;
-          gap: 5%;
-          ul {
-            margin-top: 5%;
-            display: flex;
-            flex-direction: column;
-            gap: 6%;
-            li {
-              display: flex;
-              align-items: center;
-              text-align: center;
-              span.tool-icon {
-                margin-right: 5%;
-              }
-            }
           }
         }
       }

@@ -1,8 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
+import { Grid } from "swiper/modules";
+
 import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import "swiper/css/grid";
 import "../styles/Main.scss";
 
 const projects = [
@@ -275,7 +275,29 @@ const projects = [
 
 const ProjectSwiper = ({ openModal }) => {
   return (
-    <Swiper spaceBetween={40} slidesPerView={3.5}>
+    <Swiper
+      modules={[Grid]}
+      spaceBetween={30}
+      slidesPerView={1}
+      grid={{
+        rows: 1,
+        fill: "row",
+      }}
+      breakpoints={{
+        768: {
+          slidesPerView: 2.2,
+          grid: {
+            rows: 1,
+          },
+        },
+        1024: {
+          slidesPerView: 3.2,
+          grid: {
+            rows: 1,
+          },
+        },
+      }}
+    >
       {projects.map((item, index) => (
         <SwiperSlide key={index}>
           <div className="project-card">

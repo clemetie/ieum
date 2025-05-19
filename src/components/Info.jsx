@@ -1,4 +1,3 @@
-
 const Info = () => {
   return (
     <section className="Info-wrap">
@@ -55,7 +54,9 @@ const Info = () => {
         </div>
       </div>
       <div className="profile">
-        <p className="hello main-h2">가능성을 이어주는 기획자 김효빈입니다</p>
+        <p className="hello main-h2">
+          가능성을 이어주는 기획자 김효빈입니다
+        </p>
         <ul className="Info-bullets main-h4">
           <li>
             - 팀원 <b>각자의 강점을 조율</b>해 더 나은 결과를 만듭니다.
