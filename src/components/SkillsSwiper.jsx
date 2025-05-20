@@ -553,7 +553,7 @@ const ProjectSwiper = () => {
     <Swiper
       modules={[Grid]}
       spaceBetween={30}
-      slidesPerView={1}
+      slidesPerView={1.2}
       grid={{
         rows: 1,
         fill: "row",

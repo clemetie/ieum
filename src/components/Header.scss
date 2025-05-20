@@ -36,9 +36,10 @@ header {
     }
     @include mobile {
       flex-direction: column;
-      margin-top: 30%;
+      margin-top: 35%;
       right: 0;
       align-items: flex-end;
+      gap: 13%;
     }
     li {
       opacity: 0;

@@ -68,21 +68,21 @@ $shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 @media (max-width: 767px) {
   .main-h1 {
-    @include text-style(30px, 600);
+    @include text-style(28px, 600);
   }
   .main-h2 {
-    @include text-style(24px, 500);
+    @include text-style(20px, 500);
   }
   .main-h3 {
-    @include text-style(20px, 500);
+    @include text-style(18px, 500);
   }
   .main-h4 {
     @include text-style(16px, 300);
   }
   .main-h5 {
-    @include text-style(16px, 300);
+    @include text-style(15px, 300);
   }
   .main-h6 {
-    @include text-style(15px, 700);
+    @include text-style(14px, 700);
   }
 }
