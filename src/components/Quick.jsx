@@ -15,8 +15,8 @@ const QuickMenu = () => {
     <div className="quick-menu">
       <div className="mail" onClick={copyEmail}>
         <svg
-          width="80"
-          height="80"
+          width="60"
+          height="60"
           viewBox="0 0 80 80"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -42,8 +42,8 @@ const QuickMenu = () => {
       </div>
       <div className="scrollTop" onClick={scrollToTop}>
         <svg
-          width="80"
-          height="80"
+          width="60"
+          height="60"
           viewBox="0 0 80 80"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

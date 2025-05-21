@@ -6,7 +6,7 @@
   background-color: #fff;
   @include tablet {
     flex-direction: column;
-    margin-top: 10%;
+    padding-top: 10%;
   }
 
   @include mobile {
@@ -66,9 +66,8 @@
       display: none; // 화살표 버튼 제거
     }
     section.scroll-section {
-      min-height: 100vh;
+      min-height: 80vh;
       padding: 2%;
-      scroll-margin-top: 10%;
       @include tablet {
         min-height: 90vh;
       }

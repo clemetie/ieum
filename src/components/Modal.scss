@@ -20,9 +20,12 @@
   button {
     margin-top: 5%;
     margin-left: 2%;
+    @include tablet {
+      margin-top: 2%;
+    }
   }
   .modal-content {
-    max-width: 1440px;
+    width: 1440px;
     max-height: 80vh; // 중요!
     overflow-y: auto; // 이거 있어야 스크롤 돼!
     background-color: #fff;
@@ -106,6 +109,8 @@
     .content {
       padding: 3% 0;
       text-align: center;
+    }
+    #bingfree {
       .highlight {
         background: linear-gradient(to top, #fee274 50%, transparent 50%);
       }
@@ -134,6 +139,10 @@
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           justify-items: center;
+        }
+        @include mobile {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
         }
         .solution-card {
           display: flex;
@@ -189,6 +198,80 @@
           &:last-child {
             margin-bottom: 10%;
           }
+        }
+      }
+    }
+    #gumi {
+      .main-h4 {
+        padding: 5% 0 2%;
+      }
+      .charts {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5%;
+        padding: 0 0 5%;
+      }
+      .arrow {
+        margin: 10% auto 3%;
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: fadeSlideDown 2s ease-out forwards infinite;
+      }
+
+      @keyframes fadeSlideDown {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .solution-list {
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2%;
+        margin: 5% auto;
+        @include tablet {
+          margin-top: 2%;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          justify-items: center;
+        }
+        @include mobile {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+        }
+        .solution-card {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          width: 90%;
+          height: 9rem;
+          background-color: #fff;
+          box-shadow: 0 4px 12px rgba($color: $ieum-gumi-main, $alpha: 0.25);
+          border-radius: 20px;
+          margin: 5% 0 10%;
+          @include tablet {
+            justify-content: space-between;
+            padding: 3% 3% 8%;
+          }
+          .main-h5 {
+            color: $ieum-gumi-main;
+            font-weight: 500;
+          }
+          .main-h6 {
+            font-weight: 300;
+          }
+        }
+      }
+      .gumi_3 {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 3%;
+        img {
+          width: 49%;
         }
       }
     }

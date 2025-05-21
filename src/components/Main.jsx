@@ -18,15 +18,19 @@ const Main = () => {
 
     if (!target || !contentBox) return;
 
-    const targetTopInContentBox = target.offsetTop - contentBox.offsetTop;
+    const contentBoxTop = contentBox.getBoundingClientRect().top;
+    const targetTop = target.getBoundingClientRect().top;
+    const offset = targetTop - contentBoxTop;
 
     contentBox.scrollTo({
-      top: targetTopInContentBox - navHeight,
+      top: contentBox.scrollTop + offset - navHeight,
       behavior: "smooth",
     });
 
     setActiveScrollSection(id);
   };
+
+  
 
   // ✅ 화면 크기 감지
   useEffect(() => {
