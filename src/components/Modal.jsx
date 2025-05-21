@@ -1,6 +1,6 @@
 import "./Modal.scss";
 import { useEffect } from "react";
-import DonutChart from "./DonutChart";
+import DonutChart from "./Donutchart";
 import Agecharts from "./Agecharts";
 
 const Modal = ({ open, onClose, sectionId }) => {
