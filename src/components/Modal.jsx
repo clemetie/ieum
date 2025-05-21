@@ -1,7 +1,7 @@
 import "./Modal.scss";
 import { useEffect } from "react";
-import DonutChart from "../components/DonutChart";
-import Agecharts from "../components/Agecharts";
+import DonutChart from "./DonutChart";
+import Agecharts from "./Agecharts";
 
 const Modal = ({ open, onClose, sectionId }) => {
   // 1. 모달 열릴 때 body 스크롤 막기
