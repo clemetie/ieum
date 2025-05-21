@@ -20,13 +20,15 @@
   }
 }
 .visual-wrap.headline {
+  position: sticky;
+  top: 0;
   list-style: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
   width: 100%;
   height: 800px;
+  z-index: -1;
   @include mobile {
     height: 500px;
   }
@@ -68,13 +70,14 @@
 }
 // 자기소개 섹션
 .Info-wrap {
+  background-color: #fff;
   width: 100%;
   list-style: none;
   height: 800px;
   display: flex;
   flex: 1;
   justify-content: center;
-  padding: 10% 0;
+  padding: 10% 0 15%;
   gap: 10%;
   margin: auto;
   @include tablet {
@@ -164,6 +167,63 @@
       }
       b {
         color: $ieum-main;
+      }
+    }
+  }
+  .review {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9;
+    display: flex;
+    padding: 2%;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2%;
+    overflow: hidden;
+    button {
+      margin-top: 3%;
+    }
+    .review-wrap {
+      width: 90%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1%;
+      z-index: 99999;
+      height: auto;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        width: 10px; // 세로 스크롤바만 적용
+        height: 0; // 가로 스크롤바 제거 (추가 보완)
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $ieum-point;
+        border-radius: 10px;
+        border: 2px solid transparent;
+        background-clip: content-box;
+      }
+
+      &::-webkit-scrollbar-button {
+        display: none; // 화살표 버튼 제거
+      }
+      .review-card {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: space-between;
+        padding: 5%;
+        background-color: #fff;
+        border-radius: 12px;
+        margin-top: 5%;
+        line-height: 1.5;
       }
     }
   }

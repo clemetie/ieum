@@ -1,7 +1,7 @@
 import "./Header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const naviList = [
   { name: "Project" },
@@ -12,6 +12,7 @@ const naviList = [
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [hasShadow, setHasShadow] = useState(false); // 스크롤 상태
 
   const handleScroll = (id) => {
     const section = document.getElementById(id);
@@ -21,8 +22,22 @@ const Header = () => {
     }
   };
 
+  // ✅ 스크롤 이벤트 등록
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setHasShadow(true);
+      } else {
+        setHasShadow(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header>
+    <header className={hasShadow ? "scrollshadow" : ""}>
       <img src="/images/ieumlogo.png" alt="로고" />
       <ul className={`menu-list ${menuOpen ? "show" : ""}`}>
         {naviList.map((navi, index) => {

@@ -10,6 +10,8 @@
 }
 
 header {
+  position: fixed;
+  top: 0;
   display: flex;
   align-items: center;
   width: 100%;
@@ -17,6 +19,11 @@ header {
   text-align: center;
   height: 100px;
   padding: 0 3%;
+  z-index: 9999;
+  &.scrollshadow {
+    box-shadow: 0px 0px 10px rgba($color: #98a1ae, $alpha: 0.2);
+    transition: box-shadow 0.3s ease;
+  }
   img {
     max-width: 100px;
     max-height: 50px;
@@ -85,10 +92,9 @@ header {
       background-size: contain;
       z-index: 0;
       animation: starmove 5s linear infinite;
-        @include tablet {
-      left: 14%;
-    
-    }
+      @include tablet {
+        left: 14%;
+      }
       @include mobile {
         left: 0%;
       }

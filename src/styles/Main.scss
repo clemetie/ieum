@@ -3,6 +3,7 @@
 .main-wrap {
   display: flex;
   height: 700px;
+  background-color: #fff;
   @include tablet {
     flex-direction: column;
     margin-top: 10%;
@@ -14,7 +15,7 @@
   .left-nav {
     width: 25%;
     padding: 0 2%;
-    margin: 5% 2%;
+    margin: 1% 2%;
     ul {
       list-style: none;
       display: flex;
@@ -151,7 +152,7 @@
           flex-direction: column;
           gap: 4%;
           @include mobile {
-          margin-top: 4%;
+            margin-top: 4%;
 
             gap: 3%;
           }
@@ -192,7 +193,8 @@
             padding: 8%;
           }
           @include mobile {
-            height: 4.5vh;
+            height: 10.5vh;
+            padding: 6%;
           }
           .main-h4 {
             font-weight: bold;
