@@ -13,20 +13,10 @@ header {
   display: flex;
   align-items: center;
   width: 100%;
-  background-color: #fff;
   text-align: center;
   height: 100px;
   padding: 0 3%;
   z-index: 9999;
-  &.scrollshadow {
-    box-shadow: 0px 0px 10px rgba($color: #98a1ae, $alpha: 0.2);
-    transition: box-shadow 0.3s ease;
-  }
-  img {
-    max-width: 100px;
-    max-height: 50px;
-  }
-
   .menu-list {
     width: 90%;
     display: flex;
@@ -34,7 +24,6 @@ header {
     justify-content: flex-end;
     gap: 10%;
     align-items: center;
-    padding-right: 5%;
     @include tablet {
       gap: 5%;
       padding-right: 2%;
@@ -70,32 +59,12 @@ header {
     svg {
       position: absolute;
       top: 50%;
-      left: 50%;
+      right: -50%;
       transform: translate(-50%, -50%);
-      width: 25px;
-      height: 25px;
+      width: 35px;
+      height: 35px;
       z-index: 1;
-      color: #fff;
-    }
-
-    &::after {
-      position: absolute;
-      top: 20%;
-      left: 19%;
-      content: "";
-      display: block;
-      width: 50px;
-      height: 50px;
-      background: url("/images/Star.png") no-repeat center;
-      background-size: contain;
-      z-index: 0;
-      animation: starmove 5s linear infinite;
-      @include tablet {
-        left: 14%;
-      }
-      @include mobile {
-        left: 0%;
-      }
+      color: #212121;
     }
   }
 }

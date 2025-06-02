@@ -25,7 +25,7 @@ footer {
     color: $ieum-main;
     filter: blur(1);
     opacity: 0.1;
-    z-index: 9;
+    z-index: 0;
 
     @include tablet {
       font-size: 5rem;

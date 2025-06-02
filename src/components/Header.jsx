@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 const naviList = [
   { name: "Project" },
-  { name: "Certificate" },
+  { name: "Review" },
   { name: "Skills" },
   { name: "FAQ" },
 ];
@@ -38,7 +38,6 @@ const Header = () => {
 
   return (
     <header className={hasShadow ? "scrollshadow" : ""}>
-      <img src="/images/ieumlogo.png" alt="로고" />
       <ul className={`menu-list ${menuOpen ? "show" : ""}`}>
         {naviList.map((navi, index) => {
           const delay = (naviList.length - index - 1) * 0.1;
