@@ -1,8 +1,8 @@
 @import "../styles/variables";
 @import "../styles/media";
 .main-wrap {
-  display: flex;
-  height: 700px;
+  max-width: 1920px;
+  width: 100%;
   background-color: #fff;
   @include tablet {
     flex-direction: column;
@@ -12,118 +12,140 @@
   @include mobile {
     gap: 10px;
   }
-  .left-nav {
-    width: 25%;
+  nav {
+    width: 100%;
     padding: 0 2%;
-    margin: 1% 2%;
+    margin: 0 auto;
+    text-align: center;
     ul {
+      width: 100%;
       list-style: none;
       display: flex;
-      flex-direction: column;
-      gap: 20px;
-      @include tablet {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        text-align: center;
-      }
-
-      @include mobile {
-        gap: 10px;
-      }
+      align-items: center;
+      justify-content: space-around;
+      margin: 2%;
     }
     li {
       cursor: pointer;
-      color: rgba(74, 144, 244, 0.2);
+      color: #212121;
       transition: 0.3s;
       &.active,
       &:hover {
         color: #4a90f4;
+        text-decoration: underline;
       }
     }
   }
-  .content-box {
-    flex: 1;
-    overflow-y: auto;
-    height: 700px;
-
-    &::-webkit-scrollbar {
-      width: 10px; // 세로 스크롤바만 적용
-      height: 0; // 가로 스크롤바 제거 (추가 보완)
-    }
-    &::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: $ieum-main;
-      border-radius: 10px;
-      border: 2px solid transparent;
-      background-clip: content-box;
-    }
-
-    &::-webkit-scrollbar-button {
-      display: none; // 화살표 버튼 제거
-    }
-    section.scroll-section {
-      min-height: 80vh;
-      padding: 2%;
-      @include tablet {
-        min-height: 90vh;
-      }
-      @include mobile {
-        min-height: 70vh;
-      }
-      .swiper-slide {
-        display: flex;
-        align-items: stretch;
-      }
-      .project-card {
-        background: #fff;
-        border-radius: 20px;
-        box-shadow: $shadow;
-        width: 380px;
-        height: 480px;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
+  main {
+    max-width: 1920px;
+    width: 100%;
+    #project {
+      width: 100%;
+      .top {
+        width: 100%;
+        height: 400px;
+        position: relative;
         overflow: hidden;
-        justify-content: space-between;
-        @include tablet {
-          width: 320px;
-          height: 450px;
-        }
-        @include mobile {
-          width: 280px;
-          height: 380px;
-        }
         img {
           width: 100%;
-          height: 40%;
-          object-fit: cover;
+          height: 100%;
         }
-        .project-description {
+        .txt {
+          position: absolute;
+          top: 20%;
+          left: 10%;
+          height: 60%;
           display: flex;
           flex-direction: column;
-          padding: 0 5%;
-          gap: 10%;
-          align-items: flex-start;
-          height: calc(60% / 2);
-          .main-h5 {
-            font-weight: 700;
-          }
-          p {
-            color: #666;
+          justify-content: space-between;
+          color: #fff;
+          .toptitle {
             font-weight: 500;
           }
-        }
-        .stack-icons {
-          display: flex;
-          padding: 4%;
-          gap: 8px;
-          margin-top: 10px;
+          p {
+            color: $ieum-bing-main;
+            font-weight: 300;
+            span {
+              margin-top: 10px;
+              display: inline-block;
+              text-wrap: wrap;
+              width: 60%;
+              color: #fff;
+            }
+          }
+          .showmodal {
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            width: 180px;
+            height: 50px;
+            border: 2px solid #fff;
+            border-radius: 30px;
+          }
         }
       }
+      .swiper {
+        max-width: 650px;
+        margin-top: -200px;
+        float: right;
+        overflow: hidden;
+        padding: 2%;
+        .swiper-slide {
+          display: flex;
+          justify-content: center; // 가운데 정렬
+        }
+        .project-card {
+          background: #fff;
+          border-radius: 20px;
+          box-shadow: $shadow;
+          width: 380px;
+          height: 480px;
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          overflow: hidden;
+          justify-content: space-between;
+          @include tablet {
+            width: 320px;
+            height: 450px;
+          }
+          @include mobile {
+            width: 280px;
+            height: 380px;
+          }
+          img {
+            width: 100%;
+            height: 40%;
+            object-fit: cover;
+          }
+          .project-description {
+            display: flex;
+            flex-direction: column;
+            padding: 0 5%;
+            gap: 10%;
+            align-items: flex-start;
+            height: calc(60% / 2);
+            .main-h5 {
+              font-weight: 700;
+            }
+            p {
+              color: #666;
+              font-weight: 500;
+            }
+          }
+          .stack-icons {
+            display: flex;
+            padding: 4%;
+            gap: 8px;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+    #skill {
+      display: flex;
+      padding: 2%;
+      justify-content: space-around;
       .skill-list {
         background: #fff;
         border-radius: 20px;
@@ -165,42 +187,22 @@
           }
         }
       }
-      &#certificate {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        align-content: start;
-        @include tablet {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-        }
-        @include mobile {
-          display: grid;
-          grid-template-columns: repeat(1, 1fr);
-        }
-        .certificate-card {
-          background: #fff;
-          border-radius: 20px;
-          box-shadow: $shadow;
-          height: 18vh;
-          padding: 4%;
-          display: flex;
-          flex-direction: column;
-          gap: 5%;
-          @include tablet {
-            height: 13vh;
-            padding: 8%;
-          }
-          @include mobile {
-            height: 10.5vh;
-            padding: 6%;
-          }
-          .main-h4 {
-            font-weight: bold;
-          }
-          .main-h6 {
-            color: #666;
-          }
+    }
+    .ReviewSwipe {
+      width: 100%;
+      padding: 4%;
+
+      .review-card {
+        width: 380px;
+        height: 460px;
+        padding: 8%;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        p {
+          line-height: 1.3;
         }
       }
     }

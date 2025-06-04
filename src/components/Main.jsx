@@ -1,148 +1,123 @@
+// Main.jsx
 import { useEffect, useState } from "react";
-
 import "../styles/Main.scss";
 import Modal from "./Modal";
 import ProjectSwiper from "./ProjectSwiper";
-import SkillsSwiper from "./SkillsSwiper";
+import SkillSwiper from "./SkillSwiper";
+import Review from "./Review";
+import { projects } from "../data/ieum";
 
 const Main = () => {
-  const [activeScrollSection, setActiveScrollSection] = useState("project");
+  // “project”, “Review”, “skills” 중 하나를 현재 보이는 섹션으로 관리
+  const [showSection, setShowSection] = useState("project");
+
   const [modalOpen, setModalOpen] = useState(false);
   const [activeModalSection, setActiveModalSection] = useState("");
-  const [isMobile, setIsMobile] = useState(false); // ✅ 모바일 여부 상태
+  const [isMobile, setIsMobile] = useState(false);
 
-  const scrollToInner = (id) => {
-    const contentBox = document.querySelector("#contentBox");
-    const target = document.getElementById(id);
-    const navHeight = 80;
+  const [selectedProject, setSelectedProject] = useState(projects[0]);
 
-    if (!target || !contentBox) return;
-
-    const contentBoxTop = contentBox.getBoundingClientRect().top;
-    const targetTop = target.getBoundingClientRect().top;
-    const offset = targetTop - contentBoxTop;
-
-    contentBox.scrollTo({
-      top: contentBox.scrollTop + offset - navHeight,
-      behavior: "smooth",
-    });
-
-    setActiveScrollSection(id);
+  const handleProjectSelect = (projectId) => {
+    const found = projects.find((p) => p.id === projectId);
+    if (found) setSelectedProject(found);
   };
 
-  
-
-  // ✅ 화면 크기 감지
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // 모바일 기준
-    };
-
-    handleResize(); // 초기 실행
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
-    const sections = document.querySelectorAll(".scroll-section");
-    const contentBox = document.querySelector("#contentBox");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        let visible = entries.find((entry) => entry.isIntersecting);
-        if (visible) {
-          setActiveScrollSection(visible.target.id);
-        }
-      },
-      {
-        root: contentBox,
-        threshold: 0.1,
-        rootMargin: "-80px 0px -30% 0px",
-      }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, []);
-
-  // 자격증 담아둠
-  const certificatecard = [
-    {
-      name: "웹디자인개발기능사",
-      date: "2025년 취득",
-      Certification: "한국산업인력공단",
-    },
-    {
-      name: "문화예술교육사 2급",
-      date: "2020년 취득",
-      Certification: "문화체육관광부",
-    },
-    {
-      name: "음악심리상담사",
-      date: "2018년 취득",
-      Certification: "한국산업인력공단",
-    },
-    {
-      name: "Sqld 개발자",
-      date: "2025년 취득",
-      Certification: "한국데이터산업진흥원",
-    },
-  ];
-
   const openModal = (sectionId) => {
-    setActiveScrollSection(sectionId);
     setActiveModalSection(sectionId);
     setModalOpen(true);
   };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setActiveModalSection("");
+  };
+
+  // 화면 크기 감지 (생략)...
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div className="main-wrap">
       <Modal
         open={modalOpen}
-        onClose={() => setModalOpen(false)}
+        onClose={closeModal}
         sectionId={activeModalSection}
       />
-      <nav className="left-nav">
-        <ul className={isMobile ? "main-h3" : "main-h1"}>
+
+      <nav>
+        <ul className={isMobile ? "main-h3" : "main-h2"}>
           <li
-            className={activeScrollSection === "project" ? "active" : ""}
-            onClick={() => scrollToInner("project")}
+            className={showSection === "project" ? "active" : ""}
+            onClick={() => setShowSection("project")}
           >
-            PROJECT
+            Project
           </li>
           <li
-            className={activeScrollSection === "certificate" ? "active" : ""}
-            onClick={() => scrollToInner("certificate")}
+            className={showSection === "Review" ? "active" : ""}
+            onClick={() => setShowSection("Review")}
           >
-            CERTIFICATE
+            Review
           </li>
           <li
-            className={activeScrollSection === "skills" ? "active" : ""}
-            onClick={() => scrollToInner("skills")}
+            className={showSection === "skills" ? "active" : ""}
+            onClick={() => setShowSection("skills")}
           >
-            SKILLS
+            Skills
           </li>
         </ul>
       </nav>
-
-      <div className="content-box" id="contentBox">
-        <section id="project" className="scroll-section">
-          <ProjectSwiper openModal={openModal} />
-        </section>
-        <section id="certificate" className="scroll-section">
-          {certificatecard.map((card, idx) => (
-            <div className="certificate-card" key={idx}>
-              <p className="main-h4">{card.name}</p>
-              <p className="main-h6">
-                {card.date} | {card.Certification}
-              </p>
+      <main>
+        {showSection === "project" && (
+          <section id="project">
+            <div className="top">
+              <img
+                src={selectedProject.thumnailimage}
+                alt={selectedProject.name}
+              />
+              <div className="txt">
+                <h1 className="main-h2 toptitle">
+                  {selectedProject.title} | {selectedProject.name}
+                </h1>
+                <p className="main-h4">
+                  "{selectedProject.ment}" <br />
+                  <span>{selectedProject.description}</span>
+                </p>
+                <button
+                  className="main-h6 showmodal"
+                  onClick={() => openModal(selectedProject.id)}
+                >
+                  자세히 보기
+                </button>
+              </div>
             </div>
-          ))}
-        </section>
-        <section id="skills" className="scroll-section">
-          <SkillsSwiper />
-        </section>
-      </div>
+
+            <div className="bottom">
+              <ProjectSwiper
+                onSelect={handleProjectSelect}
+                selectedProject={selectedProject}
+                openModal={openModal}
+              />
+            </div>
+          </section>
+        )}
+
+        {showSection === "Review" && (
+          <section id="Review">
+            <Review />
+          </section>
+        )}
+        {showSection === "skills" && (
+          <section id="skills">
+            <SkillSwiper />
+          </section>
+        )}
+      </main>
     </div>
   );
 };

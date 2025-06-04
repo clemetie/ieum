@@ -7,7 +7,7 @@ const naviList = [
   { name: "Project" },
   { name: "Review" },
   { name: "Skills" },
-  { name: "FAQ" },
+  { name: "Contact" },
 ];
 
 const Header = () => {

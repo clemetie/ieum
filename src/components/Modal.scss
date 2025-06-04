@@ -25,7 +25,8 @@
     }
   }
   .modal-content {
-    max-width: 1440px;
+    max-width: 1620px;
+    width: 80%;
     max-height: 80vh; // 중요!
     overflow-y: auto; // 이거 있어야 스크롤 돼!
     background-color: #fff;

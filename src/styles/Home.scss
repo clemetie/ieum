@@ -90,6 +90,85 @@
 .Info-wrap {
   width: 100%;
   height: 800px;
-  background-color: pink;
-  
+  // background-color: pink;
+  padding: 50px 70px;
+  .info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 3% 5%;
+    gap: 20%;
+    .left {
+      width: 20%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .photo {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background-color: $ieum-main;
+        margin-bottom: 40px;
+      }
+      .ment {
+        width: 380px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.1);
+        padding: 6% 4%;
+        text-align: center;
+        line-height: 1.5;
+        color: #757575;
+      }
+    }
+    .right {
+      width: 80%;
+      display: flex;
+      gap: 10%;
+      .main-h4 {
+        color: $ieum-main;
+        margin: 20px 0;
+        font-size: 18px;
+      }
+      ul {
+        margin: 20px 10px;
+        li {
+          font-size: 14px;
+          font-weight: 500;
+          margin: 5% 0;
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          justify-content: space-between;
+          span {
+            color: #757575;
+            text-align: right;
+          }
+          a {
+            color: #212121;
+          }
+        }
+      }
+    }
+  }
+  .infotitle {
+    font-size: 20px;
+    font-weight: 600;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    margin: 20px 0;
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background: rgba(254, 226, 116, 0.5);
+      border-radius: 50%;
+      filter: blur(10px);
+    }
+  }
 }

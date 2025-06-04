@@ -88,10 +88,6 @@ button {
   cursor: pointer;
 }
 
-.swiper {
-  overflow: visible !important;
-}
-
 .quick-menu {
   position: fixed;
   right: 2%;
@@ -115,6 +111,7 @@ html,
 body {
   height: 100%;
   margin: 0;
+  color: #212121;
   &::-webkit-scrollbar {
     width: 15px; // 세로 스크롤바만 적용
     height: 0; // 가로 스크롤바 제거 (추가 보완)
