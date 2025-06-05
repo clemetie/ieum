@@ -1,12 +1,71 @@
-# React + Vite
+# 🗂️ 개인 포트폴리오 사이트 | ieumbeen.vercel.app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **PM이 되기 위한 실무 경험 중심의 포트폴리오 사이트**입니다.  
+> 프로젝트마다 직접 기획, 설계, UI 구성, 프론트 구현까지 주도한 과정과  
+> 실제 서비스를 엮어 보여줄 수 있도록 제작했습니다.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ 사이트 소개
 
-## Expanding the ESLint configuration
+- **URL**: https://ieumbeen.vercel.app  
+- **목적**: 실무형 프로젝트 중심의 포트폴리오 구축  
+- **콘셉트**:  
+  - 실무 중심 End-to-End 기획 경험 강조  
+  - 직관적인 UI와 사용자 흐름 중심 설명  
+  - 실시간으로 프로젝트 설명 & 링크 연결
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📦 주요 기능 및 구성
+
+- **홈화면**
+  - 인트로 및 주요 프로젝트 소개 카드
+
+- **프로젝트 상세 모달**
+  - 각 프로젝트별 설명, 기획 배경, 기여도, 구현 요소 등 동적 출력
+  - 기획 포인트 카드화 + 시연 영상 및 이미지 포함
+
+- **데이터 연동**
+  - `projects.js` 배열 기반으로 카드/모달/버튼 자동 연동
+  - `sectionId`를 통해 각 프로젝트 상세 정보 추적 가능
+
+- **반응형 UI 구현**
+  - Swiper 슬라이드, 배경 그래디언트, 프로젝트 카드 전환 등
+
+---
+
+## ⚙️ 사용 기술
+
+- **Frontend**: React (Vite 기반)  
+- **Styling**: SCSS  
+- **Chart/시각화**: Chart.js, 커스텀 SVG  
+- **기타 도구**:
+  - `react-player` (시연 영상)
+  - `swiper/react` (슬라이드 구성)
+  - `papaparse` (리뷰용 CSV 연동)
+
+---
+
+## 🙋‍♀️ 기획 & 구현 포인트 (김효빈)
+
+- 프로젝트 전체 정보 구조 설계 및 콘텐츠 연결 흐름 기획
+- 주요 프로젝트별 카드 콘텐츠 정의 및 분기 처리 구현
+- 프로젝트 상세 모달 UI/UX 설계 및 실제 구현
+- 다수의 영상/이미지를 포함한 설명 레이아웃 구성
+- Swiper 등 시각적 효과 도입 및 반응형 최적화
+
+---
+
+## 📌 담고자 한 메시지
+
+- 단순 나열형 포트폴리오가 아닌,  
+  **사용자 관점의 문제 정의 → 해결 흐름 → 결과물**까지  
+  자연스럽게 이어지도록 설계한 **기획 기반 포트폴리오**입니다.
+
+---
+
+## 📎 링크
+
+- 🔗 [포트폴리오 사이트 바로가기](https://ieumbeen.vercel.app)
+
