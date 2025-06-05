@@ -17,11 +17,13 @@ const Footer = () => {
         <h1 className="main-h2"> 김효빈 | KIM HYO BEEN</h1>
         <div className="profile-list">
           <ul className="title main-h6">
+            <li>Birth</li>
             <li>Email</li>
             <li>Mobile</li>
             <li>Site</li>
           </ul>
           <ul className=" main-h6">
+            <li>1998.12.21</li>
             <li>hyobin1221@naver.com</li>
             <li>010-3508-3619</li>
             <li>
@@ -37,17 +39,25 @@ const Footer = () => {
               <a href="https://blog.naver.com/hyobin1221" target="_blank">
                 블로그
               </a>
+              <a
+                href="https://youtube.com/@f0r_been422?si=X2wbJET5FmmF5SZD"
+                target="_blank"
+              >
+                유튜브
+              </a>
             </li>
           </ul>
         </div>
       </div>
       <div className="faq">
         <p className="main-h2">FAQ</p>
-        {faqlist.map((item) => (
-          <div className="faqlist main-h5">{item.Question}</div>
+        {faqlist.map((item, idx) => (
+          <div className="faqlist main-h5" key={idx}>
+            {item.Question}
+          </div>
         ))}
       </div>
-      <h1 className="main-h1">KIMHYOBEEN</h1>
+      <h1 className="bigtitle">KIMHYOBEEN</h1>
     </footer>
   );
 };

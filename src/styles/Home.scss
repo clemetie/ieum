@@ -34,7 +34,6 @@
     top: 10%;
     left: 5%;
     letter-spacing: 30px;
-    font-size: 200px;
     font-weight: 600;
   }
   .blue {
@@ -92,18 +91,33 @@
   height: 800px;
   // background-color: pink;
   padding: 50px 70px;
+  @include tablet {
+    height: auto;
+    padding: 20px;
+  }
   .info {
+    max-width: 1620px;
+    margin: auto;
+
     width: 100%;
     height: 100%;
     display: flex;
     padding: 3% 5%;
     gap: 20%;
+    @include tablet {
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+    }
     .left {
       width: 20%;
       height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
+      @include tablet {
+        width: 100%;
+      }
       .photo {
         width: 250px;
         height: 250px;
@@ -125,6 +139,10 @@
       width: 80%;
       display: flex;
       gap: 10%;
+      @include tablet {
+        width: 100%;
+        flex-direction: column;
+      }
       .main-h4 {
         color: $ieum-main;
         margin: 20px 0;

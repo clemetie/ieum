@@ -46,7 +46,14 @@ $shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   @include text-style(18px, 300);
 }
 
+.bigtitle {
+  @include text-style(200px, 500);
+}
+
 @media (min-width: 768px) and (max-width: 1023px) {
+  .bigtitle {
+    @include text-style(80px, 500);
+  }
   .main-h1 {
     @include text-style(33px, 600);
   }
@@ -70,6 +77,9 @@ $shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 }
 @media (max-width: 767px) {
+  .bigtitle {
+    @include text-style(30px, 500);
+  }
   .main-h1 {
     @include text-style(28px, 600);
   }

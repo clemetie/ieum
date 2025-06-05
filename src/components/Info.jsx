@@ -21,7 +21,7 @@ const Info = () => {
         </div>
         <div className="right">
           <div className="right1">
-            <p class="infotitle">Education</p>
+            <p className="infotitle">Education</p>
             <ul className="Education">
               <li>
                 영천 성남 여자 고등학교 졸업
@@ -35,9 +35,11 @@ const Info = () => {
                 그린아트컴퓨터학원 수료
                 <span>2024.12 ~ 2025.06</span>
               </li>
-              <li>UI/UX 개발 기획 어쩌구</li>
+              <li style={{ color: "#757575" }}>
+                기업요구 프로젝트 중심 웹 UIUX 분석 기획 개발자 양성과정
+              </li>
             </ul>
-            <p class="infotitle">Certificate</p>
+            <p className="infotitle">Certificate</p>
             <ul className="Certificate">
               <li>
                 음악 심리 상담사 1급 <span>2018.03</span>
@@ -54,8 +56,8 @@ const Info = () => {
             </ul>
           </div>
           <div className="right2">
-            <p class="infotitle">Activities</p>
-            <p class="main-h4">Leadership & Team Roles</p>
+            <p className="infotitle">Activities</p>
+            <p className="main-h4">Leadership & Team Roles</p>
             <ul>
               <li>
                 김해 청소년 오케스트라 | 수석
@@ -93,7 +95,7 @@ const Info = () => {
                 <span>2022.03 ~ 2023.11</span>
               </li>
             </ul>
-            <p class="main-h4">Planning & Operation</p>
+            <p className="main-h4">Planning & Operation</p>
             <ul>
               <li>
                 <a

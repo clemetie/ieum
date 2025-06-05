@@ -29,17 +29,55 @@ const Review = () => {
   }, []);
 
   return (
-    <Swiper spaceBetween={20} slidesPerView={4.5}>
-      {reviews.map((row, idx) => (
-        <SwiperSlide key={idx} className="ReviewSwipe">
-          <div className="review-card">
-            <p>{row["내용"]}</p>
-            <h5>
-              {row["이름"]} | {row["팀"]}
-            </h5>
-          </div>
-        </SwiperSlide>
-      ))}
+    <Swiper
+      spaceBetween={20}
+      slidesPerView={4.5}
+      breakpoints={{
+        // 모바일: 0 ~ 639px
+        0: {
+          slidesPerView: 1.2,
+          spaceBetween: 10,
+        },
+        // 태블릿: 640 ~ 1023px
+        640: {
+          slidesPerView: 2.5,
+          spaceBetween: 15,
+        },
+        // 소형 데스크탑: 1024 ~ 1439px
+        1024: {
+          slidesPerView: 3.5,
+          spaceBetween: 20,
+        },
+        // 대형 데스크탑: 1440px 이상
+        1440: {
+          slidesPerView: 4.5,
+          spaceBetween: 20,
+        },
+      }}
+    >
+      {reviews.length === 0 ? (
+        // 로딩 중
+        <div className="skeleton-wrapper">
+          {[...Array(4)].map((_, idx) => (
+            <div className="review-skeleton-card" key={idx}>
+              <div className="skeleton-text short"></div>
+              <div className="skeleton-text long"></div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        // 실제 리뷰 카드 출력
+        reviews.map((row, idx) => (
+          <SwiperSlide key={idx} className="ReviewSwipe">
+            <div className="review-card">
+              <p>{row["내용"]}</p>
+              <h5>
+                {row["이름"]} | {row["팀"]}
+              </h5>
+            </div>
+          </SwiperSlide>
+        ))
+      )}
     </Swiper>
   );
 };

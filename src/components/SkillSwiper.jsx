@@ -542,7 +542,7 @@ const skills = [
 
 const SkillSwiper = () => {
   return (
-    <section id="skill">
+    <div id="skill">
       {skills.map((item, index) => (
         <div key={index}>
           <div className="skill-list">
@@ -558,7 +558,7 @@ const SkillSwiper = () => {
           </div>
         </div>
       ))}
-    </section>
+    </div>
   );
 };
 

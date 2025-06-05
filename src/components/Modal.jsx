@@ -1,7 +1,9 @@
 import "./Modal.scss";
 import { useEffect } from "react";
+import ModalTop from "../components/ModalTop";
 import DonutChart from "./Donutchart";
 import Agecharts from "./Agecharts";
+import { projects } from "../data/ieum";
 
 const Modal = ({ open, onClose, sectionId }) => {
   // 1. 모달 열릴 때 body 스크롤 막기
@@ -65,20 +67,22 @@ const Modal = ({ open, onClose, sectionId }) => {
     ],
   };
 
+  const projectData = projects.find((p) => p.id === sectionId);
   // 3. 모달 UI 반환
   return (
     <div className="modal">
       <div className="modal-content">
+        {/* 빙프리 */}
         {sectionId === "bingfree1" && (
-          <section id="bingfree">
+          <section id="bingfree1">
             <div className="top">
-              <a href="https://bingfree-b.vercel.app/" target="_blank">
-                <img src="/images/projectCard1.png" alt="프로젝트 썸네일" />
-              </a>
+              <img src={projectData.image} alt={projectData.title} />
               <div className="description-box">
-                <h3 className="main-h3">빙프리 | 제빙기 청소 예약 사이트</h3>
+                <h3 className="main-h3">
+                  {projectData.title} | {projectData.name}
+                </h3>
                 <p className="main-h6">
-                  2025.03.07 ~ 2025.04.25 | 4인 프로젝트(기획, 개발, 디자인)
+                  {projectData.period} | {projectData.team}
                 </p>
                 <p className="description">
                   제빙기 위생 관리가 중요한 업장(카페, 음식점, 병원 등)과 가정
@@ -86,11 +90,10 @@ const Modal = ({ open, onClose, sectionId }) => {
                   <br />
                   제빙기 청소를 간편하게 예약할 수 있는 웹 플랫폼
                 </p>
-                <ul className="main-h6">
-                  <li>역할 : 프로젝트 매니저 (팀장)</li>
-                  <li>- 기획 ~ 배포 전 과정 총괄</li>
-                  <li>- 예약 페이지 기획, 디자인, 개발</li>
-                  <li>- GA 적용 및 A/B테스트 후 배포</li>
+                <ul className="description">
+                  {projectData.roles.map((line, idx) => (
+                    <li key={idx}>· {line}</li>
+                  ))}
                 </ul>
                 <a
                   href="https://www.notion.so/1b25da4a6d7580c7b858c796925882e7?pvs=4"
@@ -105,12 +108,10 @@ const Modal = ({ open, onClose, sectionId }) => {
             <hr />
             <div className="content">
               <p className="main-h5">
-                제빙기는 위생 관리가 필수지만,
-                <br />
-                사용자의 위생 인식 부족과 예약 불편으로 청소 수요가 낮습니다.
+                제빙기는 위생 관리가 필수지만, 사용자의 위생 인식 부족과 예약
+                불편으로 청소 수요가 낮습니다.
                 <br />
                 <b>다양한 연령대의 고객군을 고려한</b>
-                <br />
                 직관적인 예약 시스템과 <b>장기 이용을 유도할 전략</b>이
                 필요합니다.
               </p>
@@ -212,30 +213,61 @@ const Modal = ({ open, onClose, sectionId }) => {
             </div>
           </section>
         )}
+        {/* 빙프라임 */}
+        {sectionId === "bingfree2" && (
+          <section id="bingfree2">
+            <div className="top">
+              <img src={projectData.image} alt={projectData.title} />
+              <div className="description-box">
+                <h3 className="main-h3 titlename" style={{ margin: "0" }}>
+                  {projectData.title} | {projectData.name}
+                </h3>
+                <p className="main-h6 period">
+                  {projectData.period} | {projectData.team}
+                </p>
+                <p className="description">설명 적어주셔야 합니다 이거</p>
+                <ul className="description rolelist">
+                  {projectData.roles.map((line, idx) => (
+                    <li key={idx}>· {line}</li>
+                  ))}
+                </ul>
+                <a
+                  href="https://www.notion.so/1b25da4a6d7580c7b858c796925882e7?pvs=4"
+                  target="_blank"
+                >
+                  <button class="view-button main-h5">
+                    → 기획부터 개발까지, 작업 전체 보기
+                  </button>
+                </a>
+              </div>
+            </div>
+            <hr />
+            <div className="content">
+              <h1>내용</h1>
+              {/* 시연 */}
+              <div className="demo"></div>
+            </div>
+          </section>
+        )}
+        {/* 구미 */}
         {sectionId === "gumi" && (
           <section id="gumi">
             <div className="top">
-              <a href="https://noodle-kappa.vercel.app/" target="_blank">
-                <img src="/images/projectCard2.png" alt="프로젝트 썸네일" />
-              </a>
+              <img src={projectData.image} alt={projectData.title} />
               <div className="description-box">
-                <h3 className="main-h3"> 구미 라면 축제 | 축제 홍보 사이트</h3>
+                <h3 className="main-h3">
+                  {projectData.title} | {projectData.name}
+                </h3>
                 <p className="main-h6">
-                  2025.02.06 ~ 2025.02.27 | 4인 프로젝트(기획, 개발, 디자인)
+                  {projectData.period} | {projectData.team}
                 </p>
-                <p className="description" style={{ color: "#FC6713" }}>
-                  지역 축제의 즐거움과 정보를 효과적으로 전달하기 위해 기획한
-                  웹사이트
-                  <br /> 방문자가 한눈에 정보를 확인하고 쉽게 참여할 수 있도록
-                  구성
-                </p>
-                <ul className="main-h6">
-                  <li>역할 : 팀원 | 기여도 80%</li>
-                  <li>- 메인 페이지 기획, 디자인, 개발</li>
-                  <li>- 축제 배너, 포스터 제작</li>
-                  <li>- 커뮤니티 페이지 기획, 디자인, 개발</li>
+                <p className="description">설명 적어주셔야 합니다 이거</p>
+                <ul className="description">
+                  {projectData.roles.map((line, idx) => (
+                    <li key={idx}>· {line}</li>
+                  ))}
                 </ul>
-                <a href="https://noodle-kappa.vercel.app/" target="_blank">
+                <a href={projectData.href} target="_blank">
                   <button class="view-button main-h5">→ 사이트 보러가기</button>
                 </a>
               </div>
@@ -318,22 +350,152 @@ const Modal = ({ open, onClose, sectionId }) => {
             </div>
           </section>
         )}
+        {/* 이음 */}
+        {sectionId === "ieum" && (
+          <section id="ieum">
+            <div className="top">
+              <img src={projectData.image} alt={projectData.title} />
+              <div className="description-box">
+                <h3 className="main-h3">
+                  {projectData.title} | {projectData.name}
+                </h3>
+                <p className="main-h6">
+                  {projectData.period} | {projectData.team}
+                </p>
+                <p className="description">설명 적어주셔야 합니다 이거</p>
+                <ul className="description">
+                  {projectData.roles.map((line, idx) => (
+                    <li key={idx}>· {line}</li>
+                  ))}
+                </ul>
+                <a href={projectData.href} target="_blank">
+                  <button class="view-button main-h5">→ 사이트 보러가기</button>
+                </a>
+              </div>
+            </div>
+            <hr style={{ borderColor: "#FC6713" }} />
+            <div className="content">
+              <h1>내용</h1>
+              {/* 시연 */}
+              <div className="demo"></div>
+            </div>
+          </section>
+        )}
+        {/* 니팅 */}
+        {sectionId === "knitting" && (
+          <section id="gumi">
+            <div className="top">
+              <img src={projectData.image} alt={projectData.title} />
+              <div className="description-box">
+                <h3 className="main-h3">
+                  {projectData.title} | {projectData.name}
+                </h3>
+                <p className="main-h6">
+                  {projectData.period} | {projectData.team}
+                </p>
+                <p className="description">설명 적어주셔야 합니다 이거</p>
+                <ul className="description">
+                  {projectData.roles.map((line, idx) => (
+                    <li key={idx}>· {line}</li>
+                  ))}
+                </ul>
+                <a href={projectData.href} target="_blank">
+                  <button class="view-button main-h5">→ 사이트 보러가기</button>
+                </a>
+              </div>
+            </div>
+            <hr style={{ borderColor: "#FC6713" }} />
+            <div className="content">
+              <h1>내용</h1>
+              {/* 시연 */}
+              <div className="demo"></div>
+            </div>
+          </section>
+        )}
+        {sectionId === "bookbookbook" && (
+          <section id="bookbookbook">
+            <div className="top">
+              <img src={projectData.image} alt={projectData.title} />
+              <div className="description-box">
+                <h3 className="main-h3">
+                  {projectData.title} | {projectData.name}
+                </h3>
+                <p className="main-h6">
+                  {projectData.period} | {projectData.team}
+                </p>
+                <p className="description">설명 적어주셔야 합니다 이거</p>
+                <ul className="description">
+                  {projectData.roles.map((line, idx) => (
+                    <li key={idx}>· {line}</li>
+                  ))}
+                </ul>
+                <a href={projectData.href} target="_blank">
+                  <button class="view-button main-h5">→ 사이트 보러가기</button>
+                </a>
+              </div>
+            </div>
+            <hr style={{ borderColor: "#FC6713" }} />
+            <div className="content">
+              <h1>내용</h1>
+              {/* 시연 */}
+              <div className="demo"></div>
+            </div>
+          </section>
+        )}
       </div>
-      <button onClick={onClose}>
-        <svg
-          width="50"
-          height="50"
-          viewBox="0 0 50 50"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="25" cy="25" r="25" fill="#FEE274" />
-          <path
-            d="M34.4125 18.4125C35.1938 17.6312 35.1938 16.3625 34.4125 15.5812C33.6313 14.8 32.3625 14.8 31.5813 15.5812L25 22.1687L18.4125 15.5875C17.6313 14.8062 16.3625 14.8062 15.5813 15.5875C14.8 16.3687 14.8 17.6375 15.5813 18.4187L22.1688 25L15.5875 31.5875C14.8063 32.3687 14.8063 33.6375 15.5875 34.4187C16.3688 35.2 17.6375 35.2 18.4188 34.4187L25 27.8312L31.5875 34.4125C32.3688 35.1937 33.6376 35.1937 34.4188 34.4125C35.2001 33.6312 35.2001 32.3625 34.4188 31.5812L27.8313 25L34.4125 18.4125Z"
-            fill="white"
-          />
-        </svg>
-      </button>
+      <div className="btnbox">
+        <button onClick={onClose}>
+          <svg
+            width="50"
+            height="50"
+            viewBox="0 0 50 50"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="25" cy="25" r="25" fill="#FEE274" />
+            <path
+              d="M34.4125 18.4125C35.1938 17.6312 35.1938 16.3625 34.4125 15.5812C33.6313 14.8 32.3625 14.8 31.5813 15.5812L25 22.1687L18.4125 15.5875C17.6313 14.8062 16.3625 14.8062 15.5813 15.5875C14.8 16.3687 14.8 17.6375 15.5813 18.4187L22.1688 25L15.5875 31.5875C14.8063 32.3687 14.8063 33.6375 15.5875 34.4187C16.3688 35.2 17.6375 35.2 18.4188 34.4187L25 27.8312L31.5875 34.4125C32.3688 35.1937 33.6376 35.1937 34.4188 34.4125C35.2001 33.6312 35.2001 32.3625 34.4188 31.5812L27.8313 25L34.4125 18.4125Z"
+              fill="white"
+            />
+          </svg>
+        </button>
+        <button className="link">
+          <a href={projectData?.href || "#"} target="_blank">
+            <svg
+              width="50"
+              height="50"
+              viewBox="0 0 50 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="25" cy="25" r="25" fill="#FEE274" />
+              <path
+                d="M37.9901 25.5849C40.8151 22.7599 40.8151 18.1849 37.9901 15.3599C35.4901 12.8599 31.5501 12.5349 28.6751 14.5899L28.5951 14.6449C27.8751 15.1599 27.7101 16.1599 28.2251 16.8749C28.7401 17.5899 29.7401 17.7599 30.4551 17.2449L30.5351 17.1899C32.1401 16.0449 34.3351 16.2249 35.7251 17.6199C37.3001 19.1949 37.3001 21.7449 35.7251 23.3199L30.1151 28.9399C28.5401 30.5149 25.9901 30.5149 24.4151 28.9399C23.0201 27.5449 22.8401 25.3499 23.9851 23.7499L24.0401 23.6699C24.5551 22.9499 24.3851 21.9499 23.6701 21.4399C22.9551 20.9299 21.9501 21.0949 21.4401 21.8099L21.3851 21.8899C19.3251 24.7599 19.6501 28.6999 22.1501 31.1999C24.9751 34.0249 29.5501 34.0249 32.3751 31.1999L37.9901 25.5849ZM12.0101 24.4149C9.18511 27.2399 9.18511 31.8149 12.0101 34.6399C14.5101 37.1399 18.4501 37.4649 21.3251 35.4099L21.4051 35.3549C22.1251 34.8399 22.2901 33.8399 21.7751 33.1249C21.2601 32.4099 20.2601 32.2399 19.5451 32.7549L19.4651 32.8099C17.8601 33.9549 15.6651 33.7749 14.2751 32.3799C12.7001 30.7999 12.7001 28.2499 14.2751 26.6749L19.8851 21.0599C21.4601 19.4849 24.0101 19.4849 25.5851 21.0599C26.9801 22.4549 27.1601 24.6499 26.0151 26.2549L25.9601 26.3349C25.4451 27.0549 25.6151 28.0549 26.3301 28.5649C27.0451 29.0749 28.0501 28.9099 28.5601 28.1949L28.6151 28.1149C30.6751 25.2399 30.3501 21.2999 27.8501 18.7999C25.0251 15.9749 20.4501 15.9749 17.6251 18.7999L12.0101 24.4149Z"
+                fill="white"
+              />
+            </svg>
+          </a>
+        </button>
+        <button className="git">
+          <a href={projectData?.git || "#"} target="_blank">
+            <svg
+              width="50"
+              height="50"
+              viewBox="0 0 50 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="25" cy="25" r="25" fill="#FEE274" />
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M25 9C33.8368 9 41 16.3439 41 25.4047C41 32.6511 36.4208 38.7983 30.0672 40.9695C29.256 41.1311 28.968 40.6188 28.968 40.182C28.968 39.6412 28.9872 37.8749 28.9872 35.6797C28.9872 34.1501 28.4752 33.1518 27.9008 32.643C31.464 32.2366 35.208 30.8492 35.208 24.5484C35.208 22.7564 34.5872 21.2941 33.56 20.1453C33.7264 19.7309 34.2752 18.0623 33.4032 15.8031C33.4032 15.8031 32.0624 15.3636 29.008 17.4852C27.7296 17.122 26.36 16.9392 25 16.9328C23.64 16.9392 22.272 17.122 20.9952 17.4852C17.9376 15.3636 16.5936 15.8031 16.5936 15.8031C15.7248 18.0623 16.2736 19.7309 16.4384 20.1453C15.416 21.2941 14.7904 22.7564 14.7904 24.5484C14.7904 30.8332 18.5264 32.2419 22.08 32.6563C21.6224 33.0659 21.208 33.7884 21.064 34.8492C20.152 35.2684 17.8352 35.9939 16.408 33.4867C16.408 33.4867 15.5616 31.9105 13.9552 31.7953C13.9552 31.7953 12.3952 31.7746 13.8464 32.7922C13.8464 32.7922 14.8944 33.2962 15.6224 35.1922C15.6224 35.1922 16.5616 38.1201 21.0128 37.1281C21.0208 38.4993 21.0352 39.7916 21.0352 40.182C21.0352 40.6156 20.7408 41.1231 19.9424 40.9711C13.584 38.8031 9 32.6527 9 25.4047C9 16.3439 16.1648 9 25 9Z"
+                fill="white"
+              />
+            </svg>
+          </a>
+        </button>
+      </div>
     </div>
   );
 };

@@ -77,6 +77,7 @@ const Main = () => {
           <section id="project">
             <div className="top">
               <img
+                className="thumnail"
                 src={selectedProject.thumnailimage}
                 alt={selectedProject.name}
               />
@@ -86,7 +87,6 @@ const Main = () => {
                 </h1>
                 <p className="main-h4">
                   "{selectedProject.ment}" <br />
-                  <span>{selectedProject.description}</span>
                 </p>
                 <button
                   className="main-h6 showmodal"
@@ -98,6 +98,21 @@ const Main = () => {
             </div>
 
             <div className="bottom">
+              <div className="txt">
+                <b className="main-h5">
+                  {selectedProject.period} | {selectedProject.team}
+                </b>
+                <p className="main-h6">
+                  <b style={{ color: "#9e9e9e" }}>
+                    역할: {selectedProject.roleTitle}
+                  </b>
+                </p>
+                <ul className="description">
+                  {selectedProject.roles.map((line, idx) => (
+                    <li key={idx}>· {line}</li>
+                  ))}
+                </ul>
+              </div>
               <ProjectSwiper
                 onSelect={handleProjectSelect}
                 selectedProject={selectedProject}
