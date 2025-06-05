@@ -435,9 +435,43 @@ const Modal = ({ open, onClose, sectionId }) => {
               </div>
             </div>
             <hr style={{ borderColor: "#FC6713" }} />
+            <div className="content" style={{ padding: 0 }}>
+              <img src="/images/bookbook.png" alt="북북북" />
+
+              <div className="demo"></div>
+            </div>
+          </section>
+        )}
+        {sectionId === "minum" && (
+          <section id="bookbookbook">
+            <div className="top">
+              <img src={projectData.image} alt={projectData.title} />
+              <div className="description-box">
+                <h3 className="main-h3">
+                  {projectData.title} | {projectData.name}
+                </h3>
+                <p className="main-h6">
+                  {projectData.period} | {projectData.team}
+                </p>
+                <p className="description">설명 적어주셔야 합니다 이거</p>
+                <ul className="description">
+                  {projectData.roles.map((line, idx) => (
+                    <li key={idx}>· {line}</li>
+                  ))}
+                </ul>
+                <a href={projectData.href} target="_blank">
+                  <button class="view-button main-h5">→ 사이트 보러가기</button>
+                </a>
+              </div>
+            </div>
+            <hr style={{ borderColor: "#FC6713" }} />
             <div className="content">
-              <h1>내용</h1>
-              {/* 시연 */}
+              <img src="/images/minum (1).jpg" alt="민음사로고" />
+              <img src="/images/minum (2).jpg" alt="민음사로고" />
+              <img src="/images/minum (3).jpg" alt="민음사로고" />
+              <img src="/images/minum (4).jpg" alt="민음사로고" />
+              <img src="/images/minum (5).jpg" alt="민음사로고" />
+              <img src="/images/minum (6).jpg" alt="민음사로고" />
               <div className="demo"></div>
             </div>
           </section>
