@@ -275,7 +275,8 @@ const Modal = ({ open, onClose, sectionId }) => {
             <hr style={{ borderColor: "#FC6713" }} />
             <div className="content">
               <p className="main-h5">
-                라면 축제는 다양한 연령대의 방문자가 참여하는 행사인 만큼{" "}
+                라면 축제는 다양한 연령대의 방문자가 참여하는 행사인 만큼
+                <br className="mbonly" />
                 <b>축제 정보와 참여 방법을 한눈에 볼 수 있는 간결한 구조</b> 와
                 <br />
                 구미 지역 관광 정보까지 함께 제공하는 <b>통합 안내 플랫폼</b> 이
@@ -339,7 +340,7 @@ const Modal = ({ open, onClose, sectionId }) => {
                 <img src="/images/gumi_ux.png" alt="요구사항 명세서" />
                 <img src="/images/moscow.png" alt="우선 순위 정의" />
               </div>
-              <p className="main-h6">
+              <p className="main-h5">
                 축제 참여를 유도하는 <b>예약 기능을 중심</b>으로,
                 <br />
                 사용자의 탐색 흐름과 운영 효율성을 고려해{" "}
@@ -434,16 +435,20 @@ const Modal = ({ open, onClose, sectionId }) => {
                 </a>
               </div>
             </div>
-            <hr style={{ borderColor: "#FC6713" }} />
+            <hr style={{ borderColor: "#3C4857" }} />
             <div className="content" style={{ padding: 0 }}>
-              <img src="/images/bookbook.png" alt="북북북" />
+              <img
+                style={{ margin: 0 }}
+                src="/images/bookbook.png"
+                alt="북북북"
+              />
 
               <div className="demo"></div>
             </div>
           </section>
         )}
         {sectionId === "minum" && (
-          <section id="bookbookbook">
+          <section id="minum">
             <div className="top">
               <img src={projectData.image} alt={projectData.title} />
               <div className="description-box">

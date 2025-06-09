@@ -146,3 +146,10 @@ hr {
   border-top: 2px dashed $ieum-main;
   margin: 20px 0; /* 상하 여백 (선택사항) */
 }
+
+.mbonly {
+  display: none;
+  @include tablet {
+    display: block;
+  }
+}

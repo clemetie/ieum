@@ -5,9 +5,10 @@ import Papa from "papaparse";
 
 const Review = () => {
   const [reviews, setReviews] = useState([]);
+  const [expanded, setExpanded] = useState([]);
+  const [isOverflowing, setIsOverflowing] = useState([]);
 
   useEffect(() => {
-    // “pubhtml” 대신 “pub?output=csv” 로 바꾼 URL
     const csvUrl =
       "https://docs.google.com/spreadsheets/d/e/2PACX-1vRb6vHpTokK1vrR2derKUHOscdV0NhE9w3DZXv-cWeTa0_xkAX89Go94y11ZDGaDRudHHZPK7ze6lev/pub?gid=1534480473&single=true&output=csv";
 
@@ -15,40 +16,46 @@ const Review = () => {
       .then((res) => res.text())
       .then((csvText) => {
         Papa.parse(csvText, {
-          header: true, // 첫 줄을 키(헤더)로 해석
-          skipEmptyLines: true, // 빈 줄 무시
+          header: true,
+          skipEmptyLines: true,
           complete: (results) => {
             setReviews(results.data);
-          },
-          error: (err) => {
-            console.error("CSV 파싱 중 에러:", err);
+            setExpanded(Array(results.data.length).fill(false));
+            setTimeout(() => {
+              const overflowResults = results.data.map((_, idx) => {
+                const el = document.getElementById(`review-text-${idx}`);
+                return el && el.scrollHeight > el.clientHeight;
+              });
+              setIsOverflowing(overflowResults);
+            }, 100); // DOM 렌더링 후 높이 측정
           },
         });
       })
       .catch((err) => console.error("CSV fetch 에러:", err));
   }, []);
 
+  const toggleExpand = (idx) => {
+    setExpanded((prev) => prev.map((v, i) => (i === idx ? !v : v)));
+  };
+
   return (
     <Swiper
+      className="review-swiper"
       spaceBetween={20}
       slidesPerView={4.5}
       breakpoints={{
-        // 모바일: 0 ~ 639px
         0: {
           slidesPerView: 1.2,
           spaceBetween: 10,
         },
-        // 태블릿: 640 ~ 1023px
         640: {
           slidesPerView: 2.5,
           spaceBetween: 15,
         },
-        // 소형 데스크탑: 1024 ~ 1439px
         1024: {
           slidesPerView: 3.5,
           spaceBetween: 20,
         },
-        // 대형 데스크탑: 1440px 이상
         1440: {
           slidesPerView: 4.5,
           spaceBetween: 20,
@@ -56,7 +63,6 @@ const Review = () => {
       }}
     >
       {reviews.length === 0 ? (
-        // 로딩 중
         <div className="skeleton-wrapper">
           {[...Array(4)].map((_, idx) => (
             <div className="review-skeleton-card" key={idx}>
@@ -66,11 +72,23 @@ const Review = () => {
           ))}
         </div>
       ) : (
-        // 실제 리뷰 카드 출력
         reviews.map((row, idx) => (
           <SwiperSlide key={idx} className="ReviewSwipe">
             <div className="review-card">
-              <p>{row["내용"]}</p>
+              <p
+                id={`review-text-${idx}`}
+                className={`review-text ${expanded[idx] ? "expanded" : ""}`}
+              >
+                {row["내용"]}
+              </p>
+              {isOverflowing[idx] && (
+                <span
+                  className="toggle-button mbonly"
+                  onClick={() => toggleExpand(idx)}
+                >
+                  {expanded[idx] ? "접기" : "더보기"}
+                </span>
+              )}
               <h5>
                 {row["이름"]} | {row["팀"]}
               </h5>

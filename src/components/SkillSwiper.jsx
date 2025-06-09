@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const skills = [
   {
     name: "Product Management",
@@ -541,11 +543,34 @@ const skills = [
 ];
 
 const SkillSwiper = () => {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
   return (
-    <div id="skill">
-      {skills.map((item, index) => (
-        <div key={index}>
-          <div className="skill-list">
+    <div className="skill">
+      <div className="skillmb">
+        <nav className="mbonly skilltab">
+          <ul className="skilltab">
+            {skills.map((item, index) => (
+              <li
+                key={index}
+                className={selectedIndex === index ? "active" : ""}
+                onClick={() => setSelectedIndex(index)}
+              >
+                {item.name}
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+
+      <div id="skillweb">
+        {skills.map((item, index) => (
+          <div
+            key={index}
+            className={`skill-list ${
+              selectedIndex === index ? "visible" : "hidden"
+            }`}
+          >
             <h1 className="main-h4">{item.name}</h1>
             <ul className="skill-tools">
               {item.tools.map((tool, idx) => (
@@ -556,8 +581,8 @@ const SkillSwiper = () => {
               ))}
             </ul>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

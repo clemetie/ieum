@@ -50,7 +50,7 @@ const Main = () => {
         sectionId={activeModalSection}
       />
 
-      <nav>
+      <nav className="maintab">
         <ul className={isMobile ? "main-h3" : "main-h2"}>
           <li
             className={showSection === "project" ? "active" : ""}

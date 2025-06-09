@@ -12,10 +12,11 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+
   @include tablet {
     align-items: flex-end;
     flex-direction: column-reverse;
-    padding: 1%;
+    padding: 1% 3%;
   }
   .btnbox {
     display: flex;
@@ -24,6 +25,7 @@
     margin-top: 5%;
     margin-left: 2%;
     @include tablet {
+      flex-direction: row-reverse;
       margin-top: 2%;
     }
   }
@@ -37,7 +39,8 @@
     margin-top: 5%;
     z-index: 99999;
     @include tablet {
-      width: 100%;
+      width: 90vw;
+      margin-top: 2%;
     }
     &::-webkit-scrollbar {
       width: 10px; // 세로 스크롤바만 적용
@@ -60,6 +63,12 @@
 
     &::-webkit-scrollbar-button {
       display: none; // 화살표 버튼 제거
+    }
+    .mbbr {
+      display: none;
+      @include tablet {
+        display: block;
+      }
     }
     img {
       width: 100%;
@@ -84,7 +93,8 @@
         box-shadow: $shadow;
         margin: 0;
         @include tablet {
-          max-width: 100%;
+          max-width: 90%;
+          margin: 2% auto;
         }
       }
       .description-box {
@@ -224,6 +234,10 @@
         justify-content: center;
         gap: 5%;
         padding: 0 0 5%;
+        @include tablet {
+          flex-direction: column;
+          gap: 100px;
+        }
       }
       .arrow {
         margin: 10% auto 3%;

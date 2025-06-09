@@ -122,7 +122,7 @@ export const projects = [
       "독서 목표 설정과 북마크 기능을 중심으로 독서 흐름을 시각화한 앱 디자인 프로젝트입니다. 컴포넌트 기반 UI와 플로우 설계를 통해 기획자로서의 UX 감각을 담았습니다.",
     image: "/images/bookcover.png", // 썸네일 이미지 경로 (수정 가능)
     thumnailimage: "/images/bookthumb.png", // 카드용 이미지 경로 (수정 가능)
-    href: "", // 실제 배포 링크 없다면 공란으로
+    href: "https://www.figma.com/design/ucfOu07NiulRuxlVmXrWEL/%EB%B6%81%EB%B6%81%EB%B6%81--%EC%95%B1%EB%94%94%EC%9E%90%EC%9D%B8-?node-id=35-723&t=KimO6syXFcoKbSmx-1", // 실제 배포 링크 없다면 공란으로
     git: "", // 디자인 프로젝트는 생략 가능
     roleTitle: "기획 · UI 설계 (1인 프로젝트)",
     roles: [
