@@ -7,7 +7,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba($color: #000, $alpha: 0.25);
+  background-color: rgba($color: #000, $alpha: 0.9);
   z-index: 9;
   display: flex;
   justify-content: center;
@@ -32,11 +32,10 @@
   .modal-content {
     max-width: 1440px;
     width: 80%;
-    max-height: 80vh; // 중요!
+    max-height: 90vh; // 중요!
     overflow-y: auto; // 이거 있어야 스크롤 돼!
     background-color: #fff;
-    border-radius: 12px;
-    margin-top: 5%;
+    margin-top: 2%;
     z-index: 99999;
     @include tablet {
       width: 90vw;
@@ -76,56 +75,8 @@
         margin: 10% 0;
       }
     }
-    .top {
-      display: flex;
-      padding: 2%;
-      gap: 5%;
-      @include tablet {
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-      img {
-        max-width: 680px;
-        max-height: 380px;
-        border-radius: 20px;
-        box-shadow: $shadow;
-        margin: 0;
-        @include tablet {
-          max-width: 90%;
-          margin: 2% auto;
-        }
-      }
-      .description-box {
-        width: 45%;
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-        height: auto;
-        padding: 2% 0;
-        @include tablet {
-          width: 100%;
-          margin-top: 5%;
-          padding: 0 4%;
-        }
-        li {
-          line-height: 1.5;
-          color: $gray7;
-        }
-        .description {
-          color: $ieum-bing-main;
-        }
-        a {
-          text-align: right;
-        }
-        .main-h6 {
-          color: $gray6;
-        }
-      }
-    }
+
     .content {
-      padding: 3% 0;
       text-align: center;
     }
     #bingfree1 {
@@ -172,13 +123,13 @@
           background-color: #fff;
           box-shadow: $shadow;
           border-radius: 20px;
-          margin: 5% 0 10%;
+          margin: 5% 0 20%;
           @include tablet {
             justify-content: space-between;
             padding: 3% 3% 8%;
           }
           .main-h5 {
-            color: #ff0000;
+            color: $ieum-bing-main;
             font-weight: 500;
           }
           .main-h6 {
@@ -222,8 +173,31 @@
     }
     #bingfree2 {
       width: 100%;
+      .slider {
+        position: relative;
+        width: 100%;
+        max-width: 960px; /* 필요 시 조절 */
+        height: auto;
+        overflow: hidden;
+      }
+
+      .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        z-index: 0;
+      }
+
+      .slide.active {
+        opacity: 1;
+        z-index: 1;
+      }
     }
     #gumi {
+      background-color: #212121;
       .main-h4 {
         padding: 5% 0 2%;
       }

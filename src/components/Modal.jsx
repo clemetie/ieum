@@ -1,9 +1,8 @@
-import "./Modal.scss";
-import { useEffect } from "react";
-import ModalTop from "../components/ModalTop";
+import { useEffect, useState } from "react";
 import DonutChart from "./Donutchart";
 import Agecharts from "./Agecharts";
 import { projects } from "../data/ieum";
+import "./Modal.scss";
 
 const Modal = ({ open, onClose, sectionId }) => {
   // 1. 모달 열릴 때 body 스크롤 막기
@@ -68,6 +67,18 @@ const Modal = ({ open, onClose, sectionId }) => {
   };
 
   const projectData = projects.find((p) => p.id === sectionId);
+
+  // 빙프라임 이미지
+
+  const imagePaths = [
+    "/images/image 42.png",
+    "/images/image 43.png",
+    "/images/image 44.png",
+    "/images/image 45.png",
+    "/images/image 46.png",
+    "/images/image 47.png",
+  ];
+
   // 3. 모달 UI 반환
   return (
     <div className="modal">
@@ -75,39 +86,10 @@ const Modal = ({ open, onClose, sectionId }) => {
         {/* 빙프리 */}
         {sectionId === "bingfree1" && (
           <section id="bingfree1">
-            <div className="top">
-              <img src={projectData.image} alt={projectData.title} />
-              <div className="description-box">
-                <h3 className="main-h3">
-                  {projectData.title} | {projectData.name}
-                </h3>
-                <p className="main-h6">
-                  {projectData.period} | {projectData.team}
-                </p>
-                <p className="description">
-                  제빙기 위생 관리가 중요한 업장(카페, 음식점, 병원 등)과 가정
-                  고객을 대상으로
-                  <br />
-                  제빙기 청소를 간편하게 예약할 수 있는 웹 플랫폼
-                </p>
-                <ul className="description">
-                  {projectData.roles.map((line, idx) => (
-                    <li key={idx}>· {line}</li>
-                  ))}
-                </ul>
-                <a
-                  href="https://www.notion.so/1b25da4a6d7580c7b858c796925882e7?pvs=4"
-                  target="_blank"
-                >
-                  <button class="view-button main-h5">
-                    → 기획부터 개발까지, 작업 전체 보기
-                  </button>
-                </a>
-              </div>
-            </div>
-            <hr />
+            {/* <img src="/images/bing1top.png" alt="프로젝트 소개" /> */}
             <div className="content">
-              <p className="main-h5">
+              <img src="/images/bing1.png" alt="" />
+              {/* <p className="main-h5">
                 제빙기는 위생 관리가 필수지만, 사용자의 위생 인식 부족과 예약
                 불편으로 청소 수요가 낮습니다.
                 <br />
@@ -116,7 +98,7 @@ const Modal = ({ open, onClose, sectionId }) => {
                 필요합니다.
               </p>
 
-              <img src="/images/bingfree (1).png" alt="상세이미지 1" />
+              <img src="/images/bing1-1.png" alt="상세이미지 1" />
               <p className="main-h4">
                 <b>
                   <span class="highlight">사용자의 불편에서 출발한 기획</span>,
@@ -140,7 +122,7 @@ const Modal = ({ open, onClose, sectionId }) => {
                 ))}
               </div>
 
-              <img src="/images/bingfree (3).png" alt="상세이미지2" />
+              <img src="/images/bing1-2.png" alt="상세이미지2" />
               <p className="main-h5">
                 본 화면은 기획, 디자인, 프론트엔드 구현까지 직접 담당한
                 결과물입니다.
@@ -153,7 +135,7 @@ const Modal = ({ open, onClose, sectionId }) => {
                 에 이르기까지
                 <br />
                 기획 관점에서의 End-to-End 경험을 담았습니다.
-              </p>
+              </p> */}
               <div className="demo">
                 <div className="demo1">
                   <video
@@ -216,73 +198,90 @@ const Modal = ({ open, onClose, sectionId }) => {
         {/* 빙프라임 */}
         {sectionId === "bingfree2" && (
           <section id="bingfree2">
-            <div className="top">
-              <img src={projectData.image} alt={projectData.title} />
-              <div className="description-box">
-                <h3 className="main-h3 titlename" style={{ margin: "0" }}>
-                  {projectData.title} | {projectData.name}
-                </h3>
-                <p className="main-h6 period">
-                  {projectData.period} | {projectData.team}
-                </p>
-                <p className="description">설명 적어주셔야 합니다 이거</p>
-                <ul className="description rolelist">
-                  {projectData.roles.map((line, idx) => (
-                    <li key={idx}>· {line}</li>
-                  ))}
-                </ul>
-                <a
-                  href="https://www.notion.so/1b25da4a6d7580c7b858c796925882e7?pvs=4"
-                  target="_blank"
-                >
-                  <button class="view-button main-h5">
-                    → 기획부터 개발까지, 작업 전체 보기
-                  </button>
-                </a>
-              </div>
-            </div>
-            <hr />
-            <div className="content">
-              <h1>내용</h1>
-              {/* 시연 */}
-              <div className="demo"></div>
-            </div>
+            <img src="/images/bing2.png" alt="빙프라임 설명" />
           </section>
         )}
         {/* 구미 */}
         {sectionId === "gumi" && (
           <section id="gumi">
-            <div className="top">
-              <img src={projectData.image} alt={projectData.title} />
-              <div className="description-box">
-                <h3 className="main-h3">
-                  {projectData.title} | {projectData.name}
-                </h3>
-                <p className="main-h6">
-                  {projectData.period} | {projectData.team}
-                </p>
-                <p className="description">설명 적어주셔야 합니다 이거</p>
-                <ul className="description">
-                  {projectData.roles.map((line, idx) => (
-                    <li key={idx}>· {line}</li>
-                  ))}
-                </ul>
-                <a href={projectData.href} target="_blank">
-                  <button class="view-button main-h5">→ 사이트 보러가기</button>
-                </a>
-              </div>
-            </div>
-            <hr style={{ borderColor: "#FC6713" }} />
             <div className="content">
-              <p className="main-h5">
-                라면 축제는 다양한 연령대의 방문자가 참여하는 행사인 만큼
-                <br className="mbonly" />
-                <b>축제 정보와 참여 방법을 한눈에 볼 수 있는 간결한 구조</b> 와
-                <br />
-                구미 지역 관광 정보까지 함께 제공하는 <b>통합 안내 플랫폼</b> 이
-                필요합니다
-              </p>
-
+              <img src="/images/gumi.png" alt="" />
+              <div className="introgumi">
+                <div
+                  style={{
+                    textAlign: "center",
+                    color: "white",
+                    fontSize: 30,
+                    fontFamily: "Paperlogy",
+                    fontWeight: "400",
+                    wordWrap: "break-word",
+                  }}
+                >
+                  라면 좋아하는 사람들 다 모여~ <br />
+                  같이 끓이고, 같이 웃고, 같이 먹는 축제
+                </div>
+                <div
+                  style={{
+                    textAlign: "center",
+                    color: "#FC6713",
+                    fontSize: 42,
+                    fontFamily: "Paperlogy",
+                    fontWeight: "600",
+                    wordWrap: "break-word",
+                  }}
+                >
+                  이번엔 집 말고, 구미에서 함께 라면!
+                </div>
+                <ul
+                  style={{
+                    width: "80%",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    textAlign: "left",
+                    margin: "auto",
+                  }}
+                >
+                  <li
+                    style={{
+                      width: "20%",
+                      color: "#BDBDBD",
+                      fontSize: 20,
+                      fontFamily: "Paperlogy",
+                      fontWeight: "400",
+                      wordWrap: "break-word",
+                    }}
+                  >
+                    축제의 일정, 운영 시간, 장소, 주최/주관 정보 등 핵심 개요를
+                    한눈에 파악할 수 있도록 정리했습니다.
+                  </li>
+                  <li
+                    style={{
+                      width: "20%",
+                      color: "#BDBDBD",
+                      fontSize: 20,
+                      fontFamily: "Paperlogy",
+                      fontWeight: "400",
+                      wordWrap: "break-word",
+                    }}
+                  >
+                    참여 푸드존, 부스 구성, 프로그램 시간표 등 현장을 즐기기
+                    위한 주요 콘텐츠를 정리했습니다.
+                  </li>
+                  <li
+                    style={{
+                      width: "20%",
+                      color: "#BDBDBD",
+                      fontSize: 20,
+                      fontFamily: "Paperlogy",
+                      fontWeight: "400",
+                      wordWrap: "break-word",
+                    }}
+                  >
+                    오시는 길, 셔틀버스, 이벤트 쿠폰 등 관람객 편의를 고려한
+                    정보도 함께 제공됩니다.
+                  </li>
+                </ul>
+              </div>
               <p className="main-h4" style={{ color: "#FC6713" }}>
                 방문객 데이터를 기반으로 설계한 UX 전략
               </p>
@@ -311,8 +310,8 @@ const Modal = ({ open, onClose, sectionId }) => {
                     y2="150"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#F16529" />
+                    <stop stopColor="#212121" />
+                    <stop offset="1" stopColor="#F16529" />
                   </linearGradient>
                 </defs>
               </svg>
@@ -332,49 +331,13 @@ const Modal = ({ open, onClose, sectionId }) => {
                   </div>
                 ))}
               </div>
-
-              <p className="main-h4" style={{ color: "#FC6713" }}>
-                페이지별 기능 정의 및 우선 고려 사항
-              </p>
-              <div className="gumi_3">
-                <img src="/images/gumi_ux.png" alt="요구사항 명세서" />
-                <img src="/images/moscow.png" alt="우선 순위 정의" />
-              </div>
-              <p className="main-h5">
-                축제 참여를 유도하는 <b>예약 기능을 중심</b>으로,
-                <br />
-                사용자의 탐색 흐름과 운영 효율성을 고려해{" "}
-                <b>기능 우선 순위를 정의</b>하고,
-                <br />
-                이를 기반으로 <b>실현 가능한 UX 구조를 설계</b>했습니다.
-              </p>
+              <img src="/images/gumilast.png" alt="구미 설명" />
             </div>
           </section>
         )}
         {/* 이음 */}
         {sectionId === "ieum" && (
           <section id="ieum">
-            <div className="top">
-              <img src={projectData.image} alt={projectData.title} />
-              <div className="description-box">
-                <h3 className="main-h3">
-                  {projectData.title} | {projectData.name}
-                </h3>
-                <p className="main-h6">
-                  {projectData.period} | {projectData.team}
-                </p>
-                <p className="description">설명 적어주셔야 합니다 이거</p>
-                <ul className="description">
-                  {projectData.roles.map((line, idx) => (
-                    <li key={idx}>· {line}</li>
-                  ))}
-                </ul>
-                <a href={projectData.href} target="_blank">
-                  <button class="view-button main-h5">→ 사이트 보러가기</button>
-                </a>
-              </div>
-            </div>
-            <hr style={{ borderColor: "#FC6713" }} />
             <div className="content">
               <h1>내용</h1>
               {/* 시연 */}
@@ -384,58 +347,15 @@ const Modal = ({ open, onClose, sectionId }) => {
         )}
         {/* 니팅 */}
         {sectionId === "knitting" && (
-          <section id="gumi">
-            <div className="top">
-              <img src={projectData.image} alt={projectData.title} />
-              <div className="description-box">
-                <h3 className="main-h3">
-                  {projectData.title} | {projectData.name}
-                </h3>
-                <p className="main-h6">
-                  {projectData.period} | {projectData.team}
-                </p>
-                <p className="description">설명 적어주셔야 합니다 이거</p>
-                <ul className="description">
-                  {projectData.roles.map((line, idx) => (
-                    <li key={idx}>· {line}</li>
-                  ))}
-                </ul>
-                <a href={projectData.href} target="_blank">
-                  <button class="view-button main-h5">→ 사이트 보러가기</button>
-                </a>
-              </div>
-            </div>
-            <hr style={{ borderColor: "#FC6713" }} />
+          <section id="knitting">
             <div className="content">
-              <h1>내용</h1>
-              {/* 시연 */}
+              <img style={{ margin: 0 }} src="/images/knitt~.png" alt="니팅" />
               <div className="demo"></div>
             </div>
           </section>
         )}
         {sectionId === "bookbookbook" && (
           <section id="bookbookbook">
-            <div className="top">
-              <img src={projectData.image} alt={projectData.title} />
-              <div className="description-box">
-                <h3 className="main-h3">
-                  {projectData.title} | {projectData.name}
-                </h3>
-                <p className="main-h6">
-                  {projectData.period} | {projectData.team}
-                </p>
-                <p className="description">설명 적어주셔야 합니다 이거</p>
-                <ul className="description">
-                  {projectData.roles.map((line, idx) => (
-                    <li key={idx}>· {line}</li>
-                  ))}
-                </ul>
-                <a href={projectData.href} target="_blank">
-                  <button class="view-button main-h5">→ 사이트 보러가기</button>
-                </a>
-              </div>
-            </div>
-            <hr style={{ borderColor: "#3C4857" }} />
             <div className="content" style={{ padding: 0 }}>
               <img
                 style={{ margin: 0 }}
@@ -449,27 +369,6 @@ const Modal = ({ open, onClose, sectionId }) => {
         )}
         {sectionId === "minum" && (
           <section id="minum">
-            <div className="top">
-              <img src={projectData.image} alt={projectData.title} />
-              <div className="description-box">
-                <h3 className="main-h3">
-                  {projectData.title} | {projectData.name}
-                </h3>
-                <p className="main-h6">
-                  {projectData.period} | {projectData.team}
-                </p>
-                <p className="description">설명 적어주셔야 합니다 이거</p>
-                <ul className="description">
-                  {projectData.roles.map((line, idx) => (
-                    <li key={idx}>· {line}</li>
-                  ))}
-                </ul>
-                <a href={projectData.href} target="_blank">
-                  <button class="view-button main-h5">→ 사이트 보러가기</button>
-                </a>
-              </div>
-            </div>
-            <hr style={{ borderColor: "#FC6713" }} />
             <div className="content">
               <img src="/images/minum (1).jpg" alt="민음사로고" />
               <img src="/images/minum (2).jpg" alt="민음사로고" />
