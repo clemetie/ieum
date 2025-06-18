@@ -127,6 +127,9 @@
         background-color: $ieum-main;
         margin-bottom: 40px;
         overflow: hidden;
+        img {
+          width: 100%;
+        }
       }
       .ment {
         width: 380px;
