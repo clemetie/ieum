@@ -7,7 +7,9 @@ const Info = () => {
       <p className="main-h1">About Me</p>
       <div className="info">
         <div className="left">
-          <div className="photo"></div>
+          <div className="photo">
+            <img src="/images/profile.jpg" alt="프로필사진" />
+          </div>
           <div className="ment">
             <p>
               악기를 조율하며 사람과 팀의 호흡을 읽던 제가,
