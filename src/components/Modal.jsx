@@ -138,7 +138,7 @@ const Modal = ({ open, onClose, sectionId }) => {
               </p> */}
               <div className="demo">
                 <div className="demo1">
-                  <video
+                  <img
                     src="/images/bing-main.gif"
                     alt="메인 비디오"
                     autoPlay
@@ -156,7 +156,7 @@ const Modal = ({ open, onClose, sectionId }) => {
                   </p>
                 </div>
                 <div className="demo2">
-                  <video
+                  <img
                     src="/images/bing-reserv.gif"
                     alt="메인 비디오"
                     autoPlay
