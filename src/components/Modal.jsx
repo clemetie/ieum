@@ -68,6 +68,16 @@ const Modal = ({ open, onClose, sectionId }) => {
 
   const projectData = projects.find((p) => p.id === sectionId);
 
+  const gumichat = [
+    "/images/chat (1).png",
+    "/images/chat (2).png",
+    "/images/chat (3).png",
+    "/images/chat (4).png",
+    "/images/chat (5).png",
+    "/images/chat (6).png",
+    "/images/chat (7).png",
+    "/images/chat (8).png",
+  ];
   // 빙프라임 이미지
 
   const imagePaths = [
@@ -199,13 +209,14 @@ const Modal = ({ open, onClose, sectionId }) => {
         {sectionId === "bingfree2" && (
           <section id="bingfree2">
             <img src="/images/bing2.png" alt="빙프라임 설명" />
+            <img src="/images/bingprimelast.png" alt="빙프라임 설명" />
           </section>
         )}
         {/* 구미 */}
         {sectionId === "gumi" && (
           <section id="gumi">
             <div className="content">
-              <img src="/images/gumi.png" alt="" />
+              <img src="/images/gumi.png" alt="구미상세" />
               <div className="introgumi">
                 <div
                   style={{
@@ -238,12 +249,12 @@ const Modal = ({ open, onClose, sectionId }) => {
                     display: "flex",
                     justifyContent: "space-between",
                     textAlign: "left",
-                    margin: "auto",
+                    margin: "0 auto",
                   }}
                 >
                   <li
                     style={{
-                      width: "20%",
+                      width: "25%",
                       color: "#BDBDBD",
                       fontSize: 20,
                       fontFamily: "Paperlogy",
@@ -256,7 +267,7 @@ const Modal = ({ open, onClose, sectionId }) => {
                   </li>
                   <li
                     style={{
-                      width: "20%",
+                      width: "25%",
                       color: "#BDBDBD",
                       fontSize: 20,
                       fontFamily: "Paperlogy",
@@ -269,7 +280,7 @@ const Modal = ({ open, onClose, sectionId }) => {
                   </li>
                   <li
                     style={{
-                      width: "20%",
+                      width: "25%",
                       color: "#BDBDBD",
                       fontSize: 20,
                       fontFamily: "Paperlogy",
@@ -281,13 +292,24 @@ const Modal = ({ open, onClose, sectionId }) => {
                     정보도 함께 제공됩니다.
                   </li>
                 </ul>
+                <div className="chatgroup">
+                  {gumichat.map((src, idx) => (
+                    <img
+                      key={idx}
+                      src={src}
+                      className={`stacked-image offset-${idx}`}
+                      style={{ animationDelay: `${idx * 0.5}s` }}
+                      alt={`img-${idx}`}
+                    />
+                  ))}
+                </div>
               </div>
-              <p className="main-h4" style={{ color: "#FC6713" }}>
+              <p className="main-h4" style={{ color: "#fff" }}>
                 방문객 데이터를 기반으로 설계한 UX 전략
               </p>
               <div className="charts">
-                <DonutChart />
-                <Agecharts />
+                <DonutChart style={{ zIndex: 9999 }} />
+                <Agecharts style={{ zIndex: 99999 }} />
               </div>
               <svg
                 className="arrow"
@@ -331,6 +353,7 @@ const Modal = ({ open, onClose, sectionId }) => {
                   </div>
                 ))}
               </div>
+              <img src="/images/gumi3.png" alt="구미 설명" />
               <img src="/images/gumilast.png" alt="구미 설명" />
             </div>
           </section>

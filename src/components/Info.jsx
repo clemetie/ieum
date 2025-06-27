@@ -47,16 +47,16 @@ const Info = () => {
               <p className="infotitle">Certificate</p>
               <ul className="Certificate">
                 <li>
-                  음악 심리 상담사 1급 <span>2018.03</span>
+                  웹디자인개발기능사 <span>2025.06</span>
                 </li>
                 <li>
                   문화예술교육사 2급 <span>2021.02</span>
                 </li>
                 <li>
-                  운전면허 2종 보통 <span>2024.01</span>
+                  음악 심리 상담사 1급 <span>2018.03</span>
                 </li>
                 <li>
-                  웹디자인기능사 <span>2025.06</span>
+                  2종보통운전면허 <span>2024.01</span>
                 </li>
               </ul>
             </div>
@@ -108,16 +108,7 @@ const Info = () => {
                 <p className="main-h4">Planning & Operation</p>
                 <ul>
                   <li>
-                    <a
-                      href="https://youtu.be/rfvH_Yay7SE?si=PvIa7kDy_c7T410x"
-                      target="_blank"
-                    >
-                      <FontAwesomeIcon
-                        icon={faArrowUpRightFromSquare}
-                        style={{ marginRight: "6px" }}
-                      />
-                      브리오 금관 앙상블 | 리더 &lt;음대, 바람 || &gt; 참여
-                    </a>
+                    브리오 금관 앙상블 | 리더 &lt;음대, 바람 || &gt; 참여
                     <span>2022.07</span>
                   </li>
                   <li>

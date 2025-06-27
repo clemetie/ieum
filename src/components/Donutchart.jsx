@@ -89,7 +89,14 @@ const DonutChart = () => {
         17만 1000명
       </div>
 
-      <p className="description" style={{ textAlign: "left", paddingLeft: 10 }}>
+      <p
+        className="description"
+        style={{
+          color: "#fff",
+          textAlign: "left",
+          paddingLeft: 10,
+        }}
+      >
         외지인 비율 48% <br /> → 방문 동선 설계와 지역 콘텐츠 연결이 UX의 핵심
         전력 포인트로 부상
       </p>

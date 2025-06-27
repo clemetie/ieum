@@ -28,6 +28,7 @@ const AgeBarChart = () => {
         boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
         borderRadius: 30,
         padding: 10,
+        zIndex: 99999,
       }}
     >
       <p
@@ -59,7 +60,12 @@ const AgeBarChart = () => {
 
       <p
         className="description"
-        style={{ textAlign: "left", paddingLeft: 10, paddingTop: 20 }}
+        style={{
+          color: "#fff",
+          textAlign: "left",
+          paddingLeft: 10,
+          paddingTop: 20,
+        }}
       >
         정보 탐색과 자녀 동반 활동에 익숙한 30~50대 중심 <br /> → 직관전 UI와
         체험 중심 UX 필요 전력 포인트로 부상
