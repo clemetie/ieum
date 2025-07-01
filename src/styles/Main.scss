@@ -169,6 +169,16 @@
               width: 200px;
               height: 280px;
             }
+            .stack-icons {
+              width: 100%;
+              display: flex;
+              gap: 30px;
+              .stack-icon {
+                width: 30px;
+                height: 30px;
+                object-fit: contain;
+              }
+            }
             img {
               width: 100%;
               height: 40%;

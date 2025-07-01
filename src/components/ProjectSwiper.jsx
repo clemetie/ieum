@@ -62,7 +62,17 @@ const ProjectSwiper = ({ onSelect, selectedProject, openModal }) => {
                   → 자세히 보기
                 </button>
               </div>
-              <div className="stack-icons">{item.stacks}</div>
+              <div className="stack-icons">
+                {item.stacks.map((tool) => (
+                  <img
+                    key={tool}
+                    src={`/images/icons/${tool.toLowerCase()}.svg`}
+                    alt={tool}
+                    title={tool}
+                    className="stack-icon"
+                  />
+                ))}
+              </div>
             </div>
           </SwiperSlide>
         ))}

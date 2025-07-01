@@ -1,25 +1,39 @@
+import { Button, message } from "antd";
+
 const QuickMenu = () => {
   const email = "hyobin1221@naver.com";
-
-  const copyEmail = () => {
-    navigator.clipboard.writeText(email).then(() => {
-      alert("이메일 주소가 복사되었습니다!");
-    });
-  };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" }); // ✅ 전체 창 최상단으로 이동
   };
-
+  const [messageApi, contextHolder] = message.useMessage();
+  const success = () => {
+    navigator.clipboard.writeText(email).then(() => {
+      messageApi.open({
+        type: "success",
+        content: "이메일 주소가 복사되었습니다!",
+        className: "custom-class",
+        style: {
+          marginTop: "5vh",
+        },
+      });
+    });
+  };
   return (
     <div className="quick-menu">
-      <div className="mail" onClick={copyEmail}>
+      {contextHolder}
+      <Button
+        type="text"
+        style={{ padding: 0, height: "auto" }}
+        onClick={success}
+      >
         <svg
           width="60"
           height="60"
           viewBox="0 0 80 80"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          style={{ cursor: "pointer" }}
         >
           <circle cx="40" cy="40" r="40" fill="#FEE274" />
           <g clipPath="url(#clip0_100_288)">
@@ -39,7 +53,7 @@ const QuickMenu = () => {
             </clipPath>
           </defs>
         </svg>
-      </div>
+      </Button>
       <div className="scrollTop" onClick={scrollToTop}>
         <svg
           width="60"

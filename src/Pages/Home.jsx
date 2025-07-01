@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+// import Header from "../components/Header";
 import Visual from "../components/Visual";
 import Info from "../components/Info";
 import Main from "../components/Main";
@@ -8,7 +8,7 @@ import Quick from "../components/Quick";
 const Home = () => {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <Visual />
       <Info />
       <main>

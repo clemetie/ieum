@@ -4,7 +4,9 @@ import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 const Info = () => {
   return (
     <section className="Info-wrap">
-      <p className="main-h1">About Me</p>
+      <p className="main-h1" style={{ marginBottom: 0 }}>
+        About Me
+      </p>
       <div className="info">
         <div className="left">
           <div className="photo">

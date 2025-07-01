@@ -12,6 +12,7 @@ export const projects = [
     thumnailimage: "/images/bingtumb.jpg",
     href: "https://bingfree-ten.vercel.app/",
     git: "https://github.com/clemetie/bingfree",
+    stacks: ["Vue", "Sass", "Figma", "Notion"],
     roleTitle: "팀장 | 프로젝트 전체 기획 및 일정 조율 (기여도 90%)",
     roles: [
       "프로젝트 전체 일정 및 흐름 조율",
@@ -35,6 +36,7 @@ export const projects = [
     thumnailimage: "/images/primetumb.png",
     href: "https://bingfree-b-git-main-clementies-projects.vercel.app/admin",
     git: "https://github.com/clemetie/bingfreeB",
+    stacks: ["Vue", "Sass", "Tailwind", "Figma" ],
     roleTitle: "데이터 설계 및 프론트엔드 리드 | 기여도 75%",
     roles: [
       "전체 사용자 흐름 구조화 및 페이지 흐름 설계",
@@ -58,6 +60,7 @@ export const projects = [
     thumnailimage: "/images/gumitumb.jpg",
     href: "https://noodle-kappa.vercel.app/",
     git: "https://github.com/Do-chaerin/noodle",
+    stacks: ["Slack", "Html5", "Css3", "Javascript"],
     roleTitle: "기획 · 흐름 설계 및 디자인, 개발 담당 | 기여도 80%",
     roles: [
       "메인 페이지, 커뮤니티 페이지 기획·디자인·프론트엔드 구현",
@@ -80,6 +83,7 @@ export const projects = [
     thumnailimage: "/images/ieumthum.png",
     href: "https://ieumbeen.vercel.app",
     git: "https://github.com/clemetie/ieum",
+    stacks: ["Figma", "React", "Sass", "Antdesign"],
     roleTitle: "기획 · 디자인 · 개발 전반 담당 (1인 프로젝트)",
     roles: [
       "실무 프로젝트 중심으로 기획 경험 구조화 및 스토리텔링 구성",
@@ -102,6 +106,8 @@ export const projects = [
     thumnailimage: "/images/knittumb.png",
     href: "https://knitting-shop.vercel.app/",
     git: "https://github.com/clemetie/knitting-shop",
+    stacks: ["Figma", "Html5", "Css3", "Javascript"],
+
     roleTitle: "기획 · 디자인 · 개발 전반 담당 (1인 프로젝트)",
     roles: [
       "1인 수공예 판매자 대상 소규모 커머스 구조 기획",
@@ -124,6 +130,7 @@ export const projects = [
     thumnailimage: "/images/bookthumb.png", // 카드용 이미지 경로 (수정 가능)
     href: "https://www.figma.com/design/ucfOu07NiulRuxlVmXrWEL/%EB%B6%81%EB%B6%81%EB%B6%81--%EC%95%B1%EB%94%94%EC%9E%90%EC%9D%B8-?node-id=35-723&t=KimO6syXFcoKbSmx-1", // 실제 배포 링크 없다면 공란으로
     git: "", // 디자인 프로젝트는 생략 가능
+    stacks: ["Figma"],
     roleTitle: "기획 · UI 설계 (1인 프로젝트)",
     roles: [
       "독서 목표 설정, 북마크, 검색 기능을 갖춘 앱 구조 설계",
@@ -146,6 +153,7 @@ export const projects = [
     thumnailimage: "/images/minumcover.png", // 썸네일 이미지
     href: "", // 없음
     git: "", // 없음
+    stacks: ["Ps"],
     roleTitle: "브랜딩 디자이너 (1인 프로젝트)",
     roles: [
       "출판사 철학에 기반한 로고 컨셉 도출 및 구조 설계",
