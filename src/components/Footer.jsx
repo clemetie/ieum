@@ -14,10 +14,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="profile">
-        <h1 className="main-h2" style={{ marginBottom: 0 }}>
-          {" "}
-          김효빈 | KIM HYO BEEN
-        </h1>
+        <h1 className="main-h2"> 김효빈 | KIM HYO BEEN</h1>
         <div className="profile-list">
           <ul className="title main-h6">
             <li>Birth</li>
@@ -60,7 +57,9 @@ const Footer = () => {
           </div>
         ))}
       </div>
-      <h1 className="bigtitle">KIMHYOBEEN</h1>
+      <h1 className="bigtitle" style={{ marginBottom: 0 }}>
+        KIMHYOBEEN
+      </h1>
     </footer>
   );
 };
